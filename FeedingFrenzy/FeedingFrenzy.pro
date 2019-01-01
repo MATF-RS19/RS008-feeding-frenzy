@@ -26,10 +26,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+    gamecontroller.cpp \
+    homescreencontroller.cpp
 
 HEADERS += \
-        mainwindow.h
+    gamecontroller.h \
+    homescreencontroller.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
