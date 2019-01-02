@@ -27,5 +27,5 @@ void GameController::StartGame(){
 
 void GameController::GoToMainScreen(){
     GameController::graphicsView->setScene(GameController::mainScreenController.GetScene());
-    //GameController::graphicsView->show();
+    //qDebug() << "GEOMETRIJA PROZORA" << GameController::graphicsView->geometry();
 }
