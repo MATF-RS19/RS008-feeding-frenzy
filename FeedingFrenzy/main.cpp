@@ -7,8 +7,9 @@
 #include <iostream>
 
 void RunGameLoop(){
-    QTimer::singleShot(GameDeltaTime, [=](){
+    QTimer::singleShot(GameDeltaTime * 1000, [=](){ // We need milliseconds
         InputManager::GetInstance()->TickUpdate();
+        GameController::GetInstance()->TickUpdate();
         RunGameLoop();
     });
 }

@@ -19,6 +19,10 @@ void GameController::Init(){
     GameController::graphicsView  = new QGraphicsView();
 }
 
+void GameController::TickUpdate(){
+    GameController::mainScreenController.TickUpdate();
+}
+
 void GameController::StartGame(){
     GameController::graphicsView->setScene(GameController::homeScreenController.GetScene());
     GameController::graphicsView->show();

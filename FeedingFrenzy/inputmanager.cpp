@@ -1,4 +1,5 @@
 #include "inputmanager.h"
+#include "gamecontroller.h"
 
 InputManager* InputManager::instance = nullptr;
 
@@ -25,7 +26,7 @@ void InputManager::TickUpdate(){
                 localCursorPos.y() - GameController::GetInstance()->GetGraphicsView()->geometry().y()
                 );
 
-    qDebug() << InputManager::mousePos.x() << " " << InputManager::mousePos.y();
+    //qDebug() << InputManager::mousePos.x() << " " << InputManager::mousePos.y();
 }
 
 QPoint InputManager::GetMousePos(){

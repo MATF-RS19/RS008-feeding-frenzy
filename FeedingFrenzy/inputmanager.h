@@ -1,7 +1,6 @@
 #ifndef INPUTMANAGER_H
 #define INPUTMANAGER_H
 
-#include "gamecontroller.h"
 #include <QApplication>
 #include <QPoint>
 #include <QDesktopWidget>

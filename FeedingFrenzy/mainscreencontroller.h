@@ -7,11 +7,14 @@
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
 #include <QDebug>
+#include <QBrush>
+#include <QImage>
 
 
 class MainScreenController{
 public:
     MainScreenController();
+    void TickUpdate();
     QGraphicsScene* GetScene();
 private:
     void Init();

@@ -11,6 +11,7 @@
 class GameController{
 public:
     void Init();
+    void TickUpdate();
     void StartGame();
     void GoToMainScreen();
 
