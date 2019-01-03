@@ -1,6 +1,7 @@
 #ifndef HOMESCREENCONTROLLER_H
 #define HOMESCREENCONTROLLER_H
 
+#include "constants.h"
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsRectItem>

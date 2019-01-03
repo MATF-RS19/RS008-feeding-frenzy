@@ -1,6 +1,7 @@
 #ifndef MAINSCREENCONTROLLER_H
 #define MAINSCREENCONTROLLER_H
 
+#include "constants.h"
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsRectItem>

@@ -6,6 +6,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
+#include <QDebug>
 
 class GameController{
 public:
@@ -13,9 +14,9 @@ public:
     void StartGame();
     void GoToMainScreen();
 
-    static GameController* GetInstance();
+    QGraphicsView* GetGraphicsView();
 
-    int a;
+    static GameController* GetInstance();
 private:
     GameController();
     static GameController* instance;

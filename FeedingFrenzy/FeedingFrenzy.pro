@@ -28,12 +28,15 @@ SOURCES += \
         main.cpp \
     gamecontroller.cpp \
     homescreencontroller.cpp \
-    mainscreencontroller.cpp
+    mainscreencontroller.cpp \
+    inputmanager.cpp
 
 HEADERS += \
     gamecontroller.h \
     homescreencontroller.h \
-    mainscreencontroller.h
+    mainscreencontroller.h \
+    inputmanager.h \
+    constants.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

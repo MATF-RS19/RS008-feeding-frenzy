@@ -1,5 +1,4 @@
 #include "gamecontroller.h"
-#include <QDebug>
 
 GameController* GameController::instance = nullptr;
 
@@ -28,4 +27,8 @@ void GameController::StartGame(){
 void GameController::GoToMainScreen(){
     GameController::graphicsView->setScene(GameController::mainScreenController.GetScene());
     //qDebug() << "GEOMETRIJA PROZORA" << GameController::graphicsView->geometry();
+}
+
+QGraphicsView* GameController::GetGraphicsView(){
+    return GameController::graphicsView;
 }

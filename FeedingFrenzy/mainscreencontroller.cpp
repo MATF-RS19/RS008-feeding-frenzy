@@ -6,7 +6,7 @@ MainScreenController::MainScreenController() {
 
 void MainScreenController::Init()
 {
-    MainScreenController::scene = new QGraphicsScene(0, 0, 500, 500);
+    MainScreenController::scene = new QGraphicsScene(0, 0, GameWindowWidth, GameWindowHeight);
 
     // create an item to add to the scene
     QGraphicsRectItem * rect = new QGraphicsRectItem();

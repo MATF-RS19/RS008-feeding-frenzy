@@ -1,22 +1,15 @@
 #include <QApplication>
 #include "gamecontroller.h"
-//#include "homescreencontroller.h"
+#include "inputmanager.h"
+#include "constants.h"
 #include <QTimer>
-#include <QPoint>
-#include <QDesktopWidget>
 
 #include <iostream>
 
-void printMousePos(){
-    QTimer::singleShot(16, [=](){
-        QPoint globalCursorPos = QCursor::pos();
-        int mouseScreen = qApp->desktop()->screenNumber(globalCursorPos);
-
-        QRect mouseScreenGeometry = qApp->desktop()->screen(mouseScreen)->geometry();
-        QPoint localCursorPos = globalCursorPos - mouseScreenGeometry.topLeft();
-
-        qDebug() << localCursorPos.x() << " " << localCursorPos.y();
-        printMousePos();
+void RunGameLoop(){
+    QTimer::singleShot(GameDeltaTime, [=](){
+        InputManager::GetInstance()->TickUpdate();
+        RunGameLoop();
     });
 }
 
@@ -30,7 +23,7 @@ int main(int argc, char *argv[])
         GameController::GetInstance()->GoToMainScreen();
     });
 
-    //printMousePos();
+    RunGameLoop();
 
     return a.exec();
 }
