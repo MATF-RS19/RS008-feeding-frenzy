@@ -1,4 +1,6 @@
 #include "mainscreencontroller.h"
+#include <QBrush>
+#include <QImage>
 
 MainScreenController::MainScreenController() {
     Init();
@@ -7,13 +9,13 @@ MainScreenController::MainScreenController() {
 void MainScreenController::Init()
 {
     MainScreenController::scene = new QGraphicsScene(0, 0, GameWindowWidth, GameWindowHeight);
+    MainScreenController::scene->setBackgroundBrush(QBrush(QImage(":/images/background.jpg")));
 
     // create an item to add to the scene
-    QGraphicsRectItem * rect = new QGraphicsRectItem();
-    rect->setRect(0,0,50,50); // change the rect from 0x0 (default) to 100x100 pixels
+    MainScreenController::player = new Player();
 
     // add the item to the scene
-    MainScreenController::scene->addItem(rect);
+    MainScreenController::scene->addItem(player);
 }
 
 QGraphicsScene *MainScreenController::GetScene()

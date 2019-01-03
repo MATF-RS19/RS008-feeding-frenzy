@@ -29,16 +29,21 @@ SOURCES += \
     gamecontroller.cpp \
     homescreencontroller.cpp \
     mainscreencontroller.cpp \
-    inputmanager.cpp
+    inputmanager.cpp \
+    player.cpp
 
 HEADERS += \
     gamecontroller.h \
     homescreencontroller.h \
     mainscreencontroller.h \
     inputmanager.h \
-    constants.h
+    constants.h \
+    player.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources.qrc
