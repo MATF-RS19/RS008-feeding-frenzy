@@ -14,7 +14,7 @@ void MainScreenController::Init()
     MainScreenController::scene->setBackgroundBrush(QBrush(QImage(":/images/background.jpg")));
 
     // create an item to add to the scene
-    MainScreenController::player = new Player(75);
+    MainScreenController::player = new Player(75, 500);
 
     // add the item to the scene
     MainScreenController::scene->addItem(player);

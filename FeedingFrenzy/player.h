@@ -9,12 +9,13 @@
 
 class Player: public QGraphicsPixmapItem {
 public:
-    Player(int size);
+    Player(int size, int speed);
     void TickUpdate();
 private:
     void move();
     QPixmap pix;
     int size;
+    int speed;
 };
 
 #endif // PLAYER_H

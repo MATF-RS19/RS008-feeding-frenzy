@@ -1,10 +1,8 @@
 #include "player.h"
 #include <QVector2D>
 
-Player::Player(int size)
+Player::Player(int size, int speed) : size(size), speed(speed)
 {
-    Player::size = size;
-
     Player::pix = QPixmap(":/images/player.png");
     setPixmap(pix.scaled(size, size, Qt::KeepAspectRatio));
     setPos(GameWindowWidth/2, GameWindowHeight/2);
@@ -20,13 +18,8 @@ void Player::move()
         return;
     }
 
-    QVector2D deltaPos = QVector2D(targetPos - currentPos).normalized() * 500 * GameDeltaTime;
+    QVector2D deltaPos = QVector2D(targetPos - currentPos).normalized() * Player::speed * GameDeltaTime;
     setPos(currentPos + deltaPos.toPointF());
-
-    qDebug() << pos().x() << " " << size/2;
-
-    //setPos(pos() + QPointF(-size/2, -size/2));
-
 
     if(targetPos.x() < currentPos.x()){
         setPixmap(pix.transformed(QTransform().scale(-1 * (float)size / pix.width(), 1 * (float)size / pix.height())));
