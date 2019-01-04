@@ -2,5 +2,8 @@
     <qresource prefix="/images">
         <file>background.jpg</file>
         <file>player.png</file>
+        <file>Sea_shell_blue.png</file>
+        <file>frame.jpg</file>
+        <file>background2.jpg</file>
     </qresource>
 </RCC>

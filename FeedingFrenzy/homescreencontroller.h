@@ -1,18 +1,28 @@
 #ifndef HOMESCREENCONTROLLER_H
 #define HOMESCREENCONTROLLER_H
 
-#include "constants.h"
+#include <QMainWindow>
 #include <QGraphicsScene>
-#include <QGraphicsView>
-#include <QGraphicsRectItem>
-#include <QDebug>
+namespace Ui {
+class homescreencontroller;
+}
 
+class homescreencontroller : public QMainWindow
+{
+    Q_OBJECT
 
-class HomeScreenController{
 public:
-    HomeScreenController();
+    explicit homescreencontroller(QWidget *parent = nullptr);
+    ~homescreencontroller();
     QGraphicsScene* GetScene();
+
+private slots:
+    void on_pushButton_play_clicked();
+
+    void on_pushButton_howtoplay_clicked();
+
 private:
+    Ui::homescreencontroller *ui;
     void Init();
     QGraphicsScene* scene;
 };

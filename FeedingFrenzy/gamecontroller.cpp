@@ -14,7 +14,7 @@ GameController* GameController::GetInstance(){
 }
 
 void GameController::Init(){
-    GameController::homeScreenController = HomeScreenController();
+    //GameController::homeScreenController.show();
     GameController::mainScreenController = MainScreenController();
     GameController::graphicsView  = new QGraphicsView();
 }
@@ -24,8 +24,9 @@ void GameController::TickUpdate(){
 }
 
 void GameController::StartGame(){
-    GameController::graphicsView->setScene(GameController::homeScreenController.GetScene());
-    GameController::graphicsView->show();
+    //GameController::graphicsView->setScene(GameController::homeScreenController.show());
+    //GameController::graphicsView->show();
+    GameController::homeScreenController.show();
 }
 
 void GameController::GoToMainScreen(){

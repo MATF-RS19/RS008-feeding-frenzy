@@ -27,18 +27,18 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
     gamecontroller.cpp \
-    homescreencontroller.cpp \
     mainscreencontroller.cpp \
     inputmanager.cpp \
-    player.cpp
+    player.cpp \
+    homescreencontroller.cpp
 
 HEADERS += \
     gamecontroller.h \
-    homescreencontroller.h \
     mainscreencontroller.h \
     inputmanager.h \
     constants.h \
-    player.h
+    player.h \
+    homescreencontroller.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -47,3 +47,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     resources.qrc
+
+FORMS += \
+    homescreencontroller.ui

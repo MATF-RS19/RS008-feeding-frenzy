@@ -24,7 +24,7 @@ private:
 
     QGraphicsView* graphicsView;
 
-    HomeScreenController homeScreenController;
+    homescreencontroller homeScreenController;
     MainScreenController mainScreenController;
 };
 

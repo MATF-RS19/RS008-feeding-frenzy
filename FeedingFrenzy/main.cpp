@@ -4,7 +4,6 @@
 #include "constants.h"
 #include <QTimer>
 
-#include <iostream>
 
 void RunGameLoop(){
     QTimer::singleShot(GameDeltaTime * 1000, [=](){ // We need milliseconds
