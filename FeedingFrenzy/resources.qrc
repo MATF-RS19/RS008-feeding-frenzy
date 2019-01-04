@@ -3,7 +3,6 @@
         <file>background.jpg</file>
         <file>player.png</file>
         <file>Sea_shell_blue.png</file>
-        <file>frame.jpg</file>
-        <file>background2.jpg</file>
+        <file>how_to_play.png</file>
     </qresource>
 </RCC>

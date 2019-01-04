@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QGraphicsScene>
+#include <QKeyEvent>
+
 namespace Ui {
 class homescreencontroller;
 }
@@ -15,11 +17,13 @@ public:
     explicit homescreencontroller(QWidget *parent = nullptr);
     ~homescreencontroller();
     QGraphicsScene* GetScene();
+    void keyPressEvent(QKeyEvent *event);
 
 private slots:
-    void on_pushButton_play_clicked();
+    void on_howtoplay_clicked();
 
-    void on_pushButton_howtoplay_clicked();
+
+    void on_play_clicked();
 
 private:
     Ui::homescreencontroller *ui;

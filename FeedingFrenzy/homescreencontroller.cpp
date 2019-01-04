@@ -36,12 +36,25 @@ QGraphicsScene *homescreencontroller::GetScene()
     return homescreencontroller::scene;
 }
 
-void homescreencontroller::on_pushButton_play_clicked()
+void homescreencontroller::keyPressEvent(QKeyEvent *event)
 {
-    std::cout << "**********************" << std::endl;
+
 }
 
-void homescreencontroller::on_pushButton_howtoplay_clicked()
+
+
+void homescreencontroller::on_howtoplay_clicked()
+{
+    QPixmap pix(":/images/how_to_play.png");
+    ui->howtoplay->hide();
+    ui->play->hide();
+    int w = ui->label_4->width();
+    int h = ui->label_4->height();
+    ui->label_4->setPixmap(pix.scaled(w, h, Qt::KeepAspectRatio));
+
+}
+
+void homescreencontroller::on_play_clicked()
 {
 
 }
