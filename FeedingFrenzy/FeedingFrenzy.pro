@@ -29,14 +29,22 @@ SOURCES += \
     gamecontroller.cpp \
     inputmanager.cpp \
     player.cpp \
-    homescreencontroller.cpp
+    homescreencontroller.cpp \
+    gameui.cpp \
+    gamemodel.cpp \
+    enemyfishcontroller.cpp \
+    enemyfactory.cpp
 
 HEADERS += \
     gamecontroller.h \
     inputmanager.h \
     constants.h \
     player.h \
-    homescreencontroller.h
+    homescreencontroller.h \
+    gameui.h \
+    gamemodel.h \
+    enemyfishcontroller.h \
+    enemyfactory.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

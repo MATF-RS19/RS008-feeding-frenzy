@@ -15,8 +15,9 @@ void EnemyFishController::movePlayer()
     QPointF currentPos = EnemyFishController::image->pos();
     QPointF targetPos = EnemyFishController::targetPos;
 
-    if(QVector2D(targetPos - currentPos).length() < 5){
-        //destroy fish
+    if(QVector2D(targetPos - currentPos).length() < GameDeltaTime * EnemyFishController::speed){
+        EnemyFishController::image->deleteLater();
+        EnemyFishController::image = nullptr;
         return;
     }
 

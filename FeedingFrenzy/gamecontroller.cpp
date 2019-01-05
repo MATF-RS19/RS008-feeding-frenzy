@@ -35,7 +35,7 @@ void GameController::GoToMainScreen(Ui::homescreencontroller* ui){
     QLabel* playerWidget2 = new QLabel(ui->mainScreenGroup);
     playerWidget2->setGeometry(0,0,75,75);
     playerWidget2->show();
-    GameController::enemy = new EnemyFishController(playerWidget2, 50, 200, QPointF(-50, 50), QPointF(900, 300));
+    GameController::enemy = new EnemyFishController(playerWidget2, 50, 200, QPointF(-50, 50), QPointF(700, 300));
 
     GameController::isMainGameActive = true;
     GameController::gameUi = new GameUi(ui);
