@@ -17,7 +17,7 @@ GameController* GameController::GetInstance(){
 void GameController::TickUpdate(){
     if(GameController::isMainGameActive){
         GameController::player->TickUpdate();
-        GameController::gameModel->a ++;
+        GameController::gameModel->score ++;
         GameController::gameUi->UpdateUi(GameController::gameModel);
     }
 
