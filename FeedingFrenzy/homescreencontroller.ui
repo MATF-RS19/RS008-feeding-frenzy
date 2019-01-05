@@ -156,22 +156,6 @@
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="background" native="true">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>800</width>
-      <height>450</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-image: url(:/images/background.jpg);</string>
-    </property>
-   </widget>
    <widget class="QGroupBox" name="mainScreenGroup">
     <property name="geometry">
      <rect>
@@ -185,7 +169,6 @@
      <string/>
     </property>
    </widget>
-   <zorder>background</zorder>
    <zorder>howToPlayGroup</zorder>
    <zorder>homeScreenGroup</zorder>
    <zorder>mainScreenGroup</zorder>
@@ -196,11 +179,15 @@
      <x>0</x>
      <y>0</y>
      <width>788</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

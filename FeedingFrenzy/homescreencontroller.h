@@ -16,7 +16,6 @@ class homescreencontroller : public QMainWindow
 public:
     explicit homescreencontroller(QWidget *parent = nullptr);
     ~homescreencontroller();
-    void keyPressEvent(QKeyEvent *event);
 
 private slots:
     void on_howtoplay_clicked();
@@ -25,8 +24,6 @@ private slots:
 private:
     Ui::homescreencontroller *ui;
     void Init();
-    QGraphicsScene* scene;
-    QGraphicsScene* mainScene;
 };
 
 #endif // HOMESCREENCONTROLLER_H

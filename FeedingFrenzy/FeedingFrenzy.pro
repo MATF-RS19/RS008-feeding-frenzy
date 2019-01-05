@@ -27,14 +27,12 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
     gamecontroller.cpp \
-    mainscreencontroller.cpp \
     inputmanager.cpp \
     player.cpp \
     homescreencontroller.cpp
 
 HEADERS += \
     gamecontroller.h \
-    mainscreencontroller.h \
     inputmanager.h \
     constants.h \
     player.h \
