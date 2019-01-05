@@ -2,9 +2,6 @@
 #define PLAYER_H
 
 #include "constants.h"
-#include <QGraphicsItem>
-#include <QWidget>
-#include <QGraphicsPixmapItem>
 #include <QLabel>
 
 class Player {

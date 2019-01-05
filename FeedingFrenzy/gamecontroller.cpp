@@ -17,6 +17,7 @@ GameController* GameController::GetInstance(){
 void GameController::TickUpdate(){
     if(GameController::isMainGameActive){
         GameController::player->TickUpdate();
+        GameController::enemy->TickUpdate();
         GameController::gameModel->score ++;
         GameController::gameUi->UpdateUi(GameController::gameModel);
     }
@@ -29,13 +30,23 @@ void GameController::StartGame(){
 
 void GameController::GoToMainScreen(Ui::homescreencontroller* ui){
     // create an item to add to the scene
-    QLabel* playerWidget = new QLabel(ui->mainScreenGroup);
-    playerWidget->setGeometry(0,0,75,75);
-    playerWidget->show();
-    GameController::player = new Player(playerWidget, 75, 500);
+    GameController::SpawnPlayer(ui->mainScreenGroup);
+
+    QLabel* playerWidget2 = new QLabel(ui->mainScreenGroup);
+    playerWidget2->setGeometry(0,0,75,75);
+    playerWidget2->show();
+    GameController::enemy = new EnemyFishController(playerWidget2, 50, 200, QPointF(-50, 50), QPointF(900, 300));
+
     GameController::isMainGameActive = true;
     GameController::gameUi = new GameUi(ui);
     GameController::gameModel = new GameModel();
+}
+
+void GameController::SpawnPlayer(QGroupBox* parent){
+    QLabel* playerWidget = new QLabel(parent);
+    playerWidget->setGeometry(0,0,75,75);
+    playerWidget->show();
+    GameController::player = new Player(playerWidget, 75, 500);
 }
 
 homescreencontroller* GameController::GetMainWindow(){

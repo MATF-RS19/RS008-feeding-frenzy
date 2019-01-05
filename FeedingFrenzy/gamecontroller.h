@@ -4,6 +4,7 @@
 #include "homescreencontroller.h"
 #include "ui_homescreencontroller.h"
 #include "player.h"
+#include "enemyfishcontroller.h"
 #include "gameui.h"
 #include "gamemodel.h"
 #include <QGraphicsScene>
@@ -26,11 +27,13 @@ public:
 private:
     GameController();
     static GameController* instance;
+    void SpawnPlayer(QGroupBox* parent);
 
     QGraphicsView* graphicsView;
 
     homescreencontroller homeScreenController;
     Player* player;
+    EnemyFishController* enemy;
     bool isMainGameActive;
     GameUi* gameUi;
     GameModel* gameModel;

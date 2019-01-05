@@ -1,4 +1,5 @@
 #include "inputmanager.h"
+#include "constants.h"
 
 InputManager* InputManager::instance = nullptr;
 
@@ -13,6 +14,16 @@ InputManager* InputManager::GetInstance(){
     return instance;
 }
 
+static int clamp(int number, int min, int max){
+    if(number < min){
+        number = min;
+    }
+    if(number > max){
+        number = max;
+    }
+    return number;
+}
+
 void InputManager::TickUpdate(QRect mainScreenRect){
     QPoint globalCursorPos = QCursor::pos();
     int mouseScreen = qApp->desktop()->screenNumber(globalCursorPos);
@@ -20,9 +31,12 @@ void InputManager::TickUpdate(QRect mainScreenRect){
     QRect mouseScreenGeometry = qApp->desktop()->screen(mouseScreen)->geometry();
     QPoint localCursorPos = globalCursorPos - mouseScreenGeometry.topLeft();
 
+    auto cursorXPos = localCursorPos.x() - mainScreenRect.x();
+    auto cursorYPos = localCursorPos.y() - mainScreenRect.y();
+
     InputManager::mousePos = QPoint(
-                localCursorPos.x() - mainScreenRect.x(),
-                localCursorPos.y() - mainScreenRect.y()
+                clamp(cursorXPos, 0, GameWindowWidth),
+                clamp(cursorYPos, 0, GameWindowHeight)
                 );
 
     //qDebug() << InputManager::mousePos.x() << " " << InputManager::mousePos.y();

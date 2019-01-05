@@ -15,19 +15,23 @@ void Player::movePlayer()
     QPointF currentPos = Player::image->pos();
     QPointF targetPos = InputManager::GetInstance()->GetMousePos() - QPointF(size/2, size/2);
 
-    if(QVector2D(targetPos - currentPos).length() < 5){
-        return;
+    if(QVector2D(targetPos - currentPos).length() < GameDeltaTime * Player::speed){
+        Player::image->move(targetPos.x(), targetPos.y());
     }
-
-    QVector2D deltaPos = QVector2D(targetPos - currentPos).normalized() * Player::speed * GameDeltaTime;
-    QPointF finalPos = currentPos + deltaPos.toPointF();
-    Player::image->move(finalPos.x(), finalPos.y());
+    else{
+        QVector2D deltaPos = QVector2D(targetPos - currentPos).normalized() * Player::speed * GameDeltaTime;
+        QPointF finalPos = currentPos + deltaPos.toPointF();
+        Player::image->move(finalPos.x(), finalPos.y());
+    }
 
     if(targetPos.x() < currentPos.x()){
         Player::image->setPixmap(pix.transformed(QTransform().scale(-1 * (float)size / pix.width(), 1 * (float)size / pix.height())));
     }
-    else{
+    else if (targetPos.x() > currentPos.x()){
         Player::image->setPixmap(pix.transformed(QTransform().scale(1 * (float)size / pix.width(), 1 * (float)size / pix.height())));
+    }
+    else{
+        // Fish orientation will stay as last frame
     }
 }
 
