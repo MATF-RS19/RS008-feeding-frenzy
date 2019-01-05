@@ -6,7 +6,7 @@
 #include <QKeyEvent>
 
 namespace Ui {
-class homescreencontroller;
+    class homescreencontroller;
 }
 
 class homescreencontroller : public QMainWindow

@@ -2,7 +2,10 @@
 #define GAMECONTROLLER_H
 
 #include "homescreencontroller.h"
+#include "ui_homescreencontroller.h"
 #include "player.h"
+#include "gameui.h"
+#include "gamemodel.h"
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
@@ -15,7 +18,7 @@ public:
     void Init();
     void TickUpdate();
     void StartGame();
-    void GoToMainScreen(QGroupBox* groupBox);
+    void GoToMainScreen(Ui::homescreencontroller* groupBox);
 
     homescreencontroller* GetMainWindow();
 
@@ -29,6 +32,9 @@ private:
     homescreencontroller homeScreenController;
     Player* player;
     bool isMainGameActive;
+    GameUi* gameUi;
+    GameModel* gameModel;
+
 };
 
 #endif // GAMECONTROLLER_H

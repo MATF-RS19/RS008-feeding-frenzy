@@ -17,6 +17,8 @@ GameController* GameController::GetInstance(){
 void GameController::TickUpdate(){
     if(GameController::isMainGameActive){
         GameController::player->TickUpdate();
+        GameController::gameModel->a ++;
+        GameController::gameUi->UpdateUi(GameController::gameModel);
     }
 
 }
@@ -25,16 +27,15 @@ void GameController::StartGame(){
     GameController::homeScreenController.show();
 }
 
-void GameController::GoToMainScreen(QGroupBox* groupBox){
+void GameController::GoToMainScreen(Ui::homescreencontroller* ui){
     // create an item to add to the scene
-    QLabel* playerWidget = new QLabel(groupBox);
+    QLabel* playerWidget = new QLabel(ui->mainScreenGroup);
     playerWidget->setGeometry(0,0,75,75);
     playerWidget->show();
     GameController::player = new Player(playerWidget, 75, 500);
     GameController::isMainGameActive = true;
-
-
-
+    GameController::gameUi = new GameUi(ui);
+    GameController::gameModel = new GameModel();
 }
 
 homescreencontroller* GameController::GetMainWindow(){

@@ -22,15 +22,14 @@ void homescreencontroller::Init()
 {
     setWindowTitle("Feeding Frenzy");
     this->setFixedSize(GameWindowWidth, GameWindowHeight);
-    QPixmap backgroundImage(":/images/background.jpg");
-    backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(QPalette::Background, backgroundImage);
-    setPalette(palette);
+
+    ui->statusbar->hide();
+    ui->menubar->hide();
 
     ui->howToPlayGroup->hide();
     ui->homeScreenGroup->show();
     ui->mainScreenGroup->hide();
+    ui->mainScreenUIGroup->hide();
 }
 
 
@@ -39,6 +38,7 @@ void homescreencontroller::on_howtoplay_clicked()
     ui->howToPlayGroup->show();
     ui->homeScreenGroup->hide();
     ui->mainScreenGroup->hide();
+    ui->mainScreenUIGroup->hide();
 
 }
 
@@ -47,6 +47,7 @@ void homescreencontroller::on_play_clicked()
     ui->howToPlayGroup->hide();
     ui->homeScreenGroup->hide();
     ui->mainScreenGroup->show();
+    ui->mainScreenUIGroup->show();
 
-    GameController::GetInstance()->GoToMainScreen(ui->mainScreenGroup);
+    GameController::GetInstance()->GoToMainScreen(ui);
 }
