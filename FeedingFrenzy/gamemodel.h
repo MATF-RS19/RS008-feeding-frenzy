@@ -8,6 +8,9 @@ public:
     int score;
     int fishConsumed;
     int fishNeeded;
+
+    int playerSize;
+    int playerSpeed;
 private:
 };
 

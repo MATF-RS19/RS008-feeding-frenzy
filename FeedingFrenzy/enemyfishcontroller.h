@@ -8,6 +8,9 @@ class EnemyFishController {
 public:
     EnemyFishController(QLabel* image, int size, int speed, QPointF startPos, QPointF targetPos);
     void TickUpdate();
+    int x();
+    int y();
+    void close();
 private:
     void movePlayer();
     QPixmap pix;

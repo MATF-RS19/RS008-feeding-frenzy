@@ -7,6 +7,7 @@
 #include "enemyfishcontroller.h"
 #include "gameui.h"
 #include "gamemodel.h"
+#include "enemyfactory.h"
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
@@ -33,10 +34,10 @@ private:
 
     homescreencontroller homeScreenController;
     Player* player;
-    EnemyFishController* enemy;
     bool isMainGameActive;
     GameUi* gameUi;
     GameModel* gameModel;
+    EnemyFactory* enemyFactory;
 
 };
 

@@ -16,14 +16,13 @@ void EnemyFishController::movePlayer()
     QPointF targetPos = EnemyFishController::targetPos;
 
     if(QVector2D(targetPos - currentPos).length() < GameDeltaTime * EnemyFishController::speed){
-        EnemyFishController::image->deleteLater();
-        EnemyFishController::image = nullptr;
-        return;
+        EnemyFishController::image->move(targetPos.x(), targetPos.y());
     }
-
-    QVector2D deltaPos = QVector2D(targetPos - currentPos).normalized() * EnemyFishController::speed * GameDeltaTime;
-    QPointF finalPos = currentPos + deltaPos.toPointF();
-    EnemyFishController::image->move(finalPos.x(), finalPos.y());
+    else{
+        QVector2D deltaPos = QVector2D(targetPos - currentPos).normalized() * EnemyFishController::speed * GameDeltaTime;
+        QPointF finalPos = currentPos + deltaPos.toPointF();
+        EnemyFishController::image->move(finalPos.x(), finalPos.y());
+    }
 
     if(targetPos.x() < currentPos.x()){
         EnemyFishController::image->setPixmap(pix.transformed(QTransform().scale(-1 * (float)size / pix.width(), 1 * (float)size / pix.height())));
@@ -31,6 +30,22 @@ void EnemyFishController::movePlayer()
     else{
         EnemyFishController::image->setPixmap(pix.transformed(QTransform().scale(1 * (float)size / pix.width(), 1 * (float)size / pix.height())));
     }
+}
+
+int EnemyFishController::x()
+{
+    return EnemyFishController::image->x();
+}
+
+int EnemyFishController::y()
+{
+    return EnemyFishController::image->y();
+}
+
+void EnemyFishController::close()
+{
+    EnemyFishController::image->close();
+    EnemyFishController::image = nullptr;
 }
 
 void EnemyFishController::TickUpdate()

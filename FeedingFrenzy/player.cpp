@@ -35,6 +35,16 @@ void Player::movePlayer()
     }
 }
 
+int Player::x()
+{
+    return Player::image->x();
+}
+
+int Player::y()
+{
+    return Player::image->y();
+}
+
 void Player::TickUpdate()
 {
     Player::movePlayer();

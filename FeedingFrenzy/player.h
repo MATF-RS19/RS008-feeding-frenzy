@@ -8,6 +8,8 @@ class Player {
 public:
     Player(QLabel* image, int size, int speed);
     void TickUpdate();
+    int x();
+    int y();
 private:
     void movePlayer();
     QPixmap pix;
