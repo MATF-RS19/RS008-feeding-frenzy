@@ -19,10 +19,6 @@ int main(int argc, char *argv[])
 
     GameController::GetInstance()->StartGame();
 
-    QTimer::singleShot(2000, [=](){
-        GameController::GetInstance()->GoToMainScreen();
-    });
-
     RunGameLoop();
 
     return a.exec();

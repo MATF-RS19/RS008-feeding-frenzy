@@ -30,8 +30,10 @@ void GameController::StartGame(){
 }
 
 void GameController::GoToMainScreen(){
+    qDebug() << "GO TO MAIN SCREEN";
+    GameController::homeScreenController.close();
     GameController::graphicsView->setScene(GameController::mainScreenController.GetScene());
-    //qDebug() << "GEOMETRIJA PROZORA" << GameController::graphicsView->geometry();
+    GameController::graphicsView->show();
 }
 
 QGraphicsView* GameController::GetGraphicsView(){

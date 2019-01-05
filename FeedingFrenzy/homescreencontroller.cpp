@@ -1,5 +1,6 @@
 #include "homescreencontroller.h"
 #include "ui_homescreencontroller.h"
+#include "gamecontroller.h"
 #include "constants.h"
 #include <QPixmap>
 #include <iostream>
@@ -45,16 +46,18 @@ void homescreencontroller::keyPressEvent(QKeyEvent *event)
 
 void homescreencontroller::on_howtoplay_clicked()
 {
+    qDebug() << "ASD";
     QPixmap pix(":/images/how_to_play.png");
-    ui->howtoplay->hide();
-    ui->play->hide();
-    int w = ui->label_4->width();
-    int h = ui->label_4->height();
-    ui->label_4->setPixmap(pix.scaled(w, h, Qt::KeepAspectRatio));
+    ui->howToPlayGroup->show();
+    ui->homeScreenGroup->hide();
+    int w = ui->howToPlayText->width();
+    int h = ui->howToPlayText->height();
+    ui->howToPlayText->setPixmap(pix.scaled(w, h, Qt::KeepAspectRatio));
 
 }
 
 void homescreencontroller::on_play_clicked()
 {
-
+    qDebug() << "ASD";
+    GameController::GetInstance()->GoToMainScreen();
 }
