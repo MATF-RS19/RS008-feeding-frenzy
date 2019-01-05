@@ -7,7 +7,7 @@
 
 void RunGameLoop(){
     QTimer::singleShot(GameDeltaTime * 1000, [=](){ // We need milliseconds
-        InputManager::GetInstance()->TickUpdate();
+        InputManager::GetInstance()->TickUpdate(GameController::GetInstance()->GetMainWindow()->geometry());
         GameController::GetInstance()->TickUpdate();
         RunGameLoop();
     });

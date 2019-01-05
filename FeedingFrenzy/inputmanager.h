@@ -10,7 +10,7 @@ class InputManager{
 public:
     static InputManager* GetInstance();
 
-    void TickUpdate();
+    void TickUpdate(QRect mainScreenRect);
 
     QPoint GetMousePos();
 private:

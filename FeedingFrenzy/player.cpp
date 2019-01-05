@@ -1,17 +1,18 @@
 #include "player.h"
 #include <QVector2D>
+#include <QDebug>
+#include "inputmanager.h"
 
-Player::Player(int size, int speed) : size(size), speed(speed)
+Player::Player(QLabel* image, int size, int speed) : image(image), size(size), speed(speed)
 {
     Player::pix = QPixmap(":/images/player.png");
-    setPixmap(pix.scaled(size, size, Qt::KeepAspectRatio));
-    setPos(GameWindowWidth/2, GameWindowHeight/2);
-
+    image->setPixmap(pix.scaled(size, size, Qt::KeepAspectRatio));
+    image->move(GameWindowWidth/2, GameWindowHeight/2);
 };
 
-void Player::move()
+void Player::movePlayer()
 {
-    QPointF currentPos = pos();
+    QPointF currentPos = Player::image->pos();
     QPointF targetPos = InputManager::GetInstance()->GetMousePos() - QPointF(size/2, size/2);
 
     if(QVector2D(targetPos - currentPos).length() < 5){
@@ -19,17 +20,18 @@ void Player::move()
     }
 
     QVector2D deltaPos = QVector2D(targetPos - currentPos).normalized() * Player::speed * GameDeltaTime;
-    setPos(currentPos + deltaPos.toPointF());
+    QPointF finalPos = currentPos + deltaPos.toPointF();
+    Player::image->move(finalPos.x(), finalPos.y());
 
     if(targetPos.x() < currentPos.x()){
-        setPixmap(pix.transformed(QTransform().scale(-1 * (float)size / pix.width(), 1 * (float)size / pix.height())));
+        Player::image->setPixmap(pix.transformed(QTransform().scale(-1 * (float)size / pix.width(), 1 * (float)size / pix.height())));
     }
     else{
-        setPixmap(pix.transformed(QTransform().scale(1 * (float)size / pix.width(), 1 * (float)size / pix.height())));
+        Player::image->setPixmap(pix.transformed(QTransform().scale(1 * (float)size / pix.width(), 1 * (float)size / pix.height())));
     }
 }
 
 void Player::TickUpdate()
 {
-    Player::move();
+    Player::movePlayer();
 };

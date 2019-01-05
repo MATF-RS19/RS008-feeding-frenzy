@@ -2,20 +2,22 @@
 #define GAMECONTROLLER_H
 
 #include "homescreencontroller.h"
-#include "mainscreencontroller.h"
+#include "player.h"
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
 #include <QDebug>
+#include <QGroupBox>
+#include <QLabel>
 
 class GameController{
 public:
     void Init();
     void TickUpdate();
     void StartGame();
-    void GoToMainScreen();
+    void GoToMainScreen(QGroupBox* groupBox);
 
-    QGraphicsView* GetGraphicsView();
+    homescreencontroller* GetMainWindow();
 
     static GameController* GetInstance();
 private:
@@ -25,7 +27,8 @@ private:
     QGraphicsView* graphicsView;
 
     homescreencontroller homeScreenController;
-    MainScreenController mainScreenController;
+    Player* player;
+    bool isMainGameActive;
 };
 
 #endif // GAMECONTROLLER_H

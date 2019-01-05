@@ -2,18 +2,19 @@
 #define PLAYER_H
 
 #include "constants.h"
-#include "inputmanager.h"
 #include <QGraphicsItem>
-#include <QPixmap>
+#include <QWidget>
 #include <QGraphicsPixmapItem>
+#include <QLabel>
 
-class Player: public QGraphicsPixmapItem {
+class Player {
 public:
-    Player(int size, int speed);
+    Player(QLabel* image, int size, int speed);
     void TickUpdate();
 private:
-    void move();
+    void movePlayer();
     QPixmap pix;
+    QLabel* image;
     int size;
     int speed;
 };
