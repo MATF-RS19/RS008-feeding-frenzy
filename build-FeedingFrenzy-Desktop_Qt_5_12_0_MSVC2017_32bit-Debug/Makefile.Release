@@ -871,41 +871,78 @@ release\player.obj: ..\FeedingFrenzy\player.cpp ..\FeedingFrenzy\player.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\qguiapplication.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\qinputmethod.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\QPoint \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QDesktopWidget \
-		..\FeedingFrenzy\gamecontroller.h \
-		..\FeedingFrenzy\screencontroller.h \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QMainWindow \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qmainwindow.h \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qtabwidget.h \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\qicon.h \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QGraphicsScene \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qgraphicsscene.h \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\qpen.h \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\QKeyEvent \
-		ui_screencontroller.h \
-		..\FeedingFrenzy\enemyfishcontroller.h \
-		..\FeedingFrenzy\gamemodel.h \
-		..\FeedingFrenzy\gameui.h \
-		..\FeedingFrenzy\enemyfactory.h \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\QRandomGenerator \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qrandom.h \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QGraphicsView \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qgraphicsview.h \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\qpainter.h \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\qtextoption.h \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qscrollarea.h \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qabstractscrollarea.h \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QGraphicsRectItem \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qgraphicsitem.h \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QGroupBox \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qgroupbox.h
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QDesktopWidget
 
 release\gameui.obj: ..\FeedingFrenzy\gameui.cpp ..\FeedingFrenzy\gameui.h \
 		..\FeedingFrenzy\gamemodel.h \
 		ui_screencontroller.h
 
 release\gamemodel.obj: ..\FeedingFrenzy\gamemodel.cpp ..\FeedingFrenzy\gamemodel.h \
-		..\FeedingFrenzy\constants.h
+		..\FeedingFrenzy\constants.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\QDebug \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qdebug.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qalgorithms.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qglobal.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qconfig-bootstrapped.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qconfig.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qtcore-config.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qsystemdetection.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qprocessordetection.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qcompilerdetection.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qtypeinfo.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qsysinfo.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qlogging.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qflags.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qatomic.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qbasicatomic.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qatomic_bootstrap.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qgenericatomic.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qatomic_cxx11.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qatomic_msvc.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qglobalstatic.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qmutex.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qnumeric.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qversiontagging.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qhash.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qchar.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qiterator.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qlist.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qrefcount.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qarraydata.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qhashfunctions.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qstring.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qbytearray.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qnamespace.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qstringliteral.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qstringalgorithms.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qstringview.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qstringbuilder.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qpair.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qbytearraylist.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qstringlist.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qregexp.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qstringmatcher.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qmap.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qtextstream.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qiodevice.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qobject.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qobjectdefs.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qobjectdefs_impl.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qcoreevent.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qscopedpointer.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qmetatype.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qvarlengtharray.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qcontainerfwd.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qobject_impl.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qlocale.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qvariant.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qshareddata.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qvector.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qpoint.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qset.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qcontiguouscache.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qsharedpointer.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qsharedpointer_impl.h
 
 release\enemyfishcontroller.obj: ..\FeedingFrenzy\enemyfishcontroller.cpp ..\FeedingFrenzy\enemyfishcontroller.h \
 		..\FeedingFrenzy\constants.h \

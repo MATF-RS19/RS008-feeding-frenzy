@@ -15,6 +15,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
@@ -35,7 +36,8 @@ public:
     QGroupBox *mainScreenGroup;
     QWidget *background;
     QGroupBox *mainScreenUIGroup;
-    QLabel *testLabel;
+    QLabel *scoreLabel;
+    QProgressBar *progressBar;
     QGroupBox *gameOverGroup;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -108,21 +110,29 @@ public:
         mainScreenUIGroup = new QGroupBox(centralwidget);
         mainScreenUIGroup->setObjectName(QString::fromUtf8("mainScreenUIGroup"));
         mainScreenUIGroup->setGeometry(QRect(0, 0, 800, 450));
-        testLabel = new QLabel(mainScreenUIGroup);
-        testLabel->setObjectName(QString::fromUtf8("testLabel"));
-        testLabel->setGeometry(QRect(70, 40, 111, 41));
+        scoreLabel = new QLabel(mainScreenUIGroup);
+        scoreLabel->setObjectName(QString::fromUtf8("scoreLabel"));
+        scoreLabel->setGeometry(QRect(50, 33, 300, 40));
         QPalette palette;
-        QBrush brush(QColor(255, 255, 127, 255));
+        QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
         QBrush brush1(QColor(120, 120, 120, 255));
         brush1.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
-        testLabel->setPalette(palette);
+        scoreLabel->setPalette(palette);
         QFont font2;
+        font2.setFamily(QString::fromUtf8("MV Boli"));
         font2.setPointSize(15);
-        testLabel->setFont(font2);
+        font2.setBold(true);
+        font2.setWeight(75);
+        scoreLabel->setFont(font2);
+        progressBar = new QProgressBar(mainScreenUIGroup);
+        progressBar->setObjectName(QString::fromUtf8("progressBar"));
+        progressBar->setGeometry(QRect(500, 40, 250, 26));
+        progressBar->setValue(65);
+        progressBar->setTextVisible(false);
         gameOverGroup = new QGroupBox(centralwidget);
         gameOverGroup->setObjectName(QString::fromUtf8("gameOverGroup"));
         gameOverGroup->setGeometry(QRect(0, 0, 800, 450));
@@ -158,7 +168,7 @@ public:
         howToPlayGroup->setTitle(QString());
         mainScreenGroup->setTitle(QString());
         mainScreenUIGroup->setTitle(QString());
-        testLabel->setText(QApplication::translate("screencontroller", "TextLabel", nullptr));
+        scoreLabel->setText(QApplication::translate("screencontroller", "TextLabel", nullptr));
         gameOverGroup->setTitle(QString());
     } // retranslateUi
 

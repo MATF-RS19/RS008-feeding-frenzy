@@ -24,7 +24,7 @@ public:
     explicit ScreenController(QWidget *parent = nullptr);
     ~ScreenController();
 
-    void GoToGameOverScreen();
+    void GoToGameOverScreen(bool hasWon);
 
 private slots:
     void on_howtoplay_clicked();

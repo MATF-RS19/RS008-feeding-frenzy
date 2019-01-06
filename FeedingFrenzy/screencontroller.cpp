@@ -29,10 +29,9 @@ void ScreenController::Init()
     ScreenController::SwitchScreen(Home);
 }
 
-void ScreenController::GoToGameOverScreen(){
+void ScreenController::GoToGameOverScreen(bool hasWon){
     ScreenController::SwitchScreen(GameOver);
-
-
+    //Setup UI for game over
 }
 
 void ScreenController::on_howtoplay_clicked()
