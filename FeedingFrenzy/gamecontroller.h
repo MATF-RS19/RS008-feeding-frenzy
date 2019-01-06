@@ -1,8 +1,8 @@
 #ifndef GAMECONTROLLER_H
 #define GAMECONTROLLER_H
 
-#include "homescreencontroller.h"
-#include "ui_homescreencontroller.h"
+#include "screencontroller.h"
+#include "ui_screencontroller.h"
 #include "player.h"
 #include "enemyfishcontroller.h"
 #include "gameui.h"
@@ -20,9 +20,9 @@ public:
     void Init();
     void TickUpdate();
     void StartGame();
-    void GoToMainScreen(Ui::homescreencontroller* groupBox);
+    void GoToMainScreen(Ui::screencontroller* groupBox);
 
-    homescreencontroller* GetMainWindow();
+    screencontroller* GetMainWindow();
 
     static GameController* GetInstance();
 private:
@@ -32,7 +32,7 @@ private:
 
     QGraphicsView* graphicsView;
 
-    homescreencontroller homeScreenController;
+    screencontroller homeScreenController;
     Player* player;
     bool isMainGameActive;
     GameUi* gameUi;

@@ -2,15 +2,15 @@
 #define GAMEUI_H
 
 #include "gamemodel.h"
-#include "ui_homescreencontroller.h"
+#include "ui_screencontroller.h"
 
 
 class GameUi {
 public:
-    GameUi(Ui::homescreencontroller* gameUi);
+    GameUi(Ui::screencontroller* gameUi);
     void UpdateUi(GameModel* model);
 private:
-    Ui::homescreencontroller* ui;
+    Ui::screencontroller* ui;
 };
 
 #endif // GAMEUI_H

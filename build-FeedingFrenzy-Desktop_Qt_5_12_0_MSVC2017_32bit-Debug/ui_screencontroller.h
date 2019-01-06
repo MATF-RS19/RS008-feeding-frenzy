@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'homescreencontroller.ui'
+** Form generated from reading UI file 'screencontroller.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.12.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_HOMESCREENCONTROLLER_H
-#define UI_HOMESCREENCONTROLLER_H
+#ifndef UI_SCREENCONTROLLER_H
+#define UI_SCREENCONTROLLER_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
@@ -21,7 +21,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_homescreencontroller
+class Ui_screencontroller
 {
 public:
     QWidget *centralwidget;
@@ -39,14 +39,14 @@ public:
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
-    void setupUi(QMainWindow *homescreencontroller)
+    void setupUi(QMainWindow *screencontroller)
     {
-        if (homescreencontroller->objectName().isEmpty())
-            homescreencontroller->setObjectName(QString::fromUtf8("homescreencontroller"));
-        homescreencontroller->resize(788, 473);
-        homescreencontroller->setAutoFillBackground(false);
-        homescreencontroller->setStyleSheet(QString::fromUtf8(""));
-        centralwidget = new QWidget(homescreencontroller);
+        if (screencontroller->objectName().isEmpty())
+            screencontroller->setObjectName(QString::fromUtf8("screencontroller"));
+        screencontroller->resize(788, 473);
+        screencontroller->setAutoFillBackground(false);
+        screencontroller->setStyleSheet(QString::fromUtf8(""));
+        centralwidget = new QWidget(screencontroller);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         homeScreenGroup = new QGroupBox(centralwidget);
         homeScreenGroup->setObjectName(QString::fromUtf8("homeScreenGroup"));
@@ -122,46 +122,46 @@ public:
         QFont font2;
         font2.setPointSize(15);
         testLabel->setFont(font2);
-        homescreencontroller->setCentralWidget(centralwidget);
+        screencontroller->setCentralWidget(centralwidget);
         background->raise();
         howToPlayGroup->raise();
         homeScreenGroup->raise();
         mainScreenGroup->raise();
         mainScreenUIGroup->raise();
-        menubar = new QMenuBar(homescreencontroller);
+        menubar = new QMenuBar(screencontroller);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 788, 21));
-        homescreencontroller->setMenuBar(menubar);
-        statusbar = new QStatusBar(homescreencontroller);
+        screencontroller->setMenuBar(menubar);
+        statusbar = new QStatusBar(screencontroller);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         statusbar->setEnabled(false);
-        homescreencontroller->setStatusBar(statusbar);
+        screencontroller->setStatusBar(statusbar);
 
-        retranslateUi(homescreencontroller);
+        retranslateUi(screencontroller);
 
-        QMetaObject::connectSlotsByName(homescreencontroller);
+        QMetaObject::connectSlotsByName(screencontroller);
     } // setupUi
 
-    void retranslateUi(QMainWindow *homescreencontroller)
+    void retranslateUi(QMainWindow *screencontroller)
     {
-        homescreencontroller->setWindowTitle(QApplication::translate("homescreencontroller", "MainWindow", nullptr));
+        screencontroller->setWindowTitle(QApplication::translate("screencontroller", "MainWindow", nullptr));
         homeScreenGroup->setTitle(QString());
         howToPlayBg->setText(QString());
         playBg->setText(QString());
-        play->setText(QApplication::translate("homescreencontroller", "Play", nullptr));
-        howtoplay->setText(QApplication::translate("homescreencontroller", "How to play", nullptr));
+        play->setText(QApplication::translate("screencontroller", "Play", nullptr));
+        howtoplay->setText(QApplication::translate("screencontroller", "How to play", nullptr));
         howToPlayGroup->setTitle(QString());
         mainScreenGroup->setTitle(QString());
         mainScreenUIGroup->setTitle(QString());
-        testLabel->setText(QApplication::translate("homescreencontroller", "TextLabel", nullptr));
+        testLabel->setText(QApplication::translate("screencontroller", "TextLabel", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class homescreencontroller: public Ui_homescreencontroller {};
+    class screencontroller: public Ui_screencontroller {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_HOMESCREENCONTROLLER_H
+#endif // UI_SCREENCONTROLLER_H

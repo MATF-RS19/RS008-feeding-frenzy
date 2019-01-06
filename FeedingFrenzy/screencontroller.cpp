@@ -1,24 +1,24 @@
-#include "homescreencontroller.h"
-#include "ui_homescreencontroller.h"
+#include "screencontroller.h"
+#include "ui_screencontroller.h"
 #include "gamecontroller.h"
 #include "constants.h"
 #include <QPixmap>
 #include <iostream>
 
-homescreencontroller::homescreencontroller(QWidget *parent) :
+screencontroller::screencontroller(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::homescreencontroller)
+    ui(new Ui::screencontroller)
 {
     ui->setupUi(this);
     Init();
 }
 
-homescreencontroller::~homescreencontroller()
+screencontroller::~screencontroller()
 {
     delete ui;
 }
 
-void homescreencontroller::Init()
+void screencontroller::Init()
 {
     setWindowTitle("Feeding Frenzy");
     this->setFixedSize(GameWindowWidth, GameWindowHeight);
@@ -33,7 +33,7 @@ void homescreencontroller::Init()
 }
 
 
-void homescreencontroller::on_howtoplay_clicked()
+void screencontroller::on_howtoplay_clicked()
 {
     ui->howToPlayGroup->show();
     ui->homeScreenGroup->hide();
@@ -42,7 +42,7 @@ void homescreencontroller::on_howtoplay_clicked()
 
 }
 
-void homescreencontroller::on_play_clicked()
+void screencontroller::on_play_clicked()
 {
     ui->howToPlayGroup->hide();
     ui->homeScreenGroup->hide();

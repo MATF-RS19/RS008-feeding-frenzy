@@ -3,13 +3,13 @@
 
 #include "constants.h"
 #include "enemyfishcontroller.h"
-#include "ui_homescreencontroller.h"
+#include "ui_screencontroller.h"
 #include <QLabel>
 #include <QRandomGenerator>
 
 class EnemyFactory {
 public:
-    EnemyFactory(Ui::homescreencontroller* ui);
+    EnemyFactory(Ui::screencontroller* ui);
     void TickUpdate();
     void RemoveEnemyAtIndex(int i);
 
@@ -20,7 +20,7 @@ private:
     void SpawnFish();
     void UpdateAllFish();
 
-    Ui::homescreencontroller* ui;
+    Ui::screencontroller* ui;
     float secondsUntilNextRespawn;
 };
 

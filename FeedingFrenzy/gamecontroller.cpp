@@ -42,7 +42,7 @@ void GameController::StartGame(){
     GameController::homeScreenController.show();
 }
 
-void GameController::GoToMainScreen(Ui::homescreencontroller* ui){
+void GameController::GoToMainScreen(Ui::screencontroller* ui){
     GameController::isMainGameActive = true;
     GameController::gameUi = new GameUi(ui);
     GameController::gameModel = new GameModel();
@@ -61,6 +61,6 @@ void GameController::SpawnPlayer(QGroupBox* parent){
                                         GameController::gameModel->playerSpeed);
 }
 
-homescreencontroller* GameController::GetMainWindow(){
+screencontroller* GameController::GetMainWindow(){
     return &homeScreenController;
 }

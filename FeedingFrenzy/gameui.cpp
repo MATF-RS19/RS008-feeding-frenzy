@@ -1,7 +1,7 @@
 
 #include "gameui.h"
 
-GameUi::GameUi(Ui::homescreencontroller *gameUi) : ui (gameUi)
+GameUi::GameUi(Ui::screencontroller *gameUi) : ui (gameUi)
 {
 
 }

@@ -1,7 +1,7 @@
 #include "enemyfactory.h"
 #include <QDebug>
 
-EnemyFactory::EnemyFactory(Ui::homescreencontroller* ui) : ui(ui)
+EnemyFactory::EnemyFactory(Ui::screencontroller* ui) : ui(ui)
 {
     EnemyFactory::secondsUntilNextRespawn = 0;
     EnemyFactory::numberOfEnemies = 0;

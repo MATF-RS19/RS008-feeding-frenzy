@@ -6,23 +6,23 @@
 #include <QKeyEvent>
 
 namespace Ui {
-    class homescreencontroller;
+    class screencontroller;
 }
 
-class homescreencontroller : public QMainWindow
+class screencontroller : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit homescreencontroller(QWidget *parent = nullptr);
-    ~homescreencontroller();
+    explicit screencontroller(QWidget *parent = nullptr);
+    ~screencontroller();
 
 private slots:
     void on_howtoplay_clicked();
     void on_play_clicked();
 
 private:
-    Ui::homescreencontroller *ui;
+    Ui::screencontroller *ui;
     void Init();
 };
 
