@@ -31,6 +31,8 @@ void ScreenController::Init()
 
 void ScreenController::GoToGameOverScreen(){
     ScreenController::SwitchScreen(GameOver);
+
+
 }
 
 void ScreenController::on_howtoplay_clicked()
@@ -41,7 +43,6 @@ void ScreenController::on_howtoplay_clicked()
 void ScreenController::on_play_clicked()
 {
     ScreenController::SwitchScreen(Main);
-
     GameController::GetInstance()->GoToMainScreen(ui);
 }
 

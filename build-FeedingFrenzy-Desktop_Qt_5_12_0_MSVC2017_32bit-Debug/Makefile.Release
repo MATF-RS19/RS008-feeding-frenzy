@@ -196,9 +196,13 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_resources.cpp
 release\qrc_resources.cpp: ..\FeedingFrenzy\resources.qrc \
 		E:\Programs\Qt\5.12.0\msvc2017\bin\rcc.exe \
+		..\FeedingFrenzy\fish0.png \
 		..\FeedingFrenzy\player.png \
+		..\FeedingFrenzy\fish3.png \
 		..\FeedingFrenzy\how_to_play.png \
+		..\FeedingFrenzy\fish2.png \
 		..\FeedingFrenzy\background.jpg \
+		..\FeedingFrenzy\fish1.png \
 		..\FeedingFrenzy\Sea_shell_blue.png
 	E:\Programs\Qt\5.12.0\msvc2017\bin\rcc.exe -name resources ..\FeedingFrenzy\resources.qrc -o release\qrc_resources.cpp
 
@@ -468,15 +472,15 @@ release\main.obj: ..\FeedingFrenzy\main.cpp E:\Programs\Qt\5.12.0\msvc2017\inclu
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qgraphicsscene.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\qpen.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\QKeyEvent \
+		ui_screencontroller.h \
 		..\FeedingFrenzy\player.h \
 		..\FeedingFrenzy\constants.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QLabel \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qlabel.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qframe.h \
 		..\FeedingFrenzy\enemyfishcontroller.h \
-		..\FeedingFrenzy\gameui.h \
 		..\FeedingFrenzy\gamemodel.h \
-		ui_screencontroller.h \
+		..\FeedingFrenzy\gameui.h \
 		..\FeedingFrenzy\enemyfactory.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\QRandomGenerator \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qrandom.h \
@@ -610,15 +614,15 @@ release\gamecontroller.obj: ..\FeedingFrenzy\gamecontroller.cpp ..\FeedingFrenzy
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qgraphicsscene.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\qpen.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\QKeyEvent \
+		ui_screencontroller.h \
 		..\FeedingFrenzy\player.h \
 		..\FeedingFrenzy\constants.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QLabel \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qlabel.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qframe.h \
 		..\FeedingFrenzy\enemyfishcontroller.h \
-		..\FeedingFrenzy\gameui.h \
 		..\FeedingFrenzy\gamemodel.h \
-		ui_screencontroller.h \
+		..\FeedingFrenzy\gameui.h \
 		..\FeedingFrenzy\enemyfactory.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\QRandomGenerator \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qrandom.h \
@@ -867,7 +871,34 @@ release\player.obj: ..\FeedingFrenzy\player.cpp ..\FeedingFrenzy\player.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\qguiapplication.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\qinputmethod.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\QPoint \
-		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QDesktopWidget
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QDesktopWidget \
+		..\FeedingFrenzy\gamecontroller.h \
+		..\FeedingFrenzy\screencontroller.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QMainWindow \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qmainwindow.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qtabwidget.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\qicon.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QGraphicsScene \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qgraphicsscene.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\qpen.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\QKeyEvent \
+		ui_screencontroller.h \
+		..\FeedingFrenzy\enemyfishcontroller.h \
+		..\FeedingFrenzy\gamemodel.h \
+		..\FeedingFrenzy\gameui.h \
+		..\FeedingFrenzy\enemyfactory.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\QRandomGenerator \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qrandom.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QGraphicsView \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qgraphicsview.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\qpainter.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\qtextoption.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qscrollarea.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qabstractscrollarea.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QGraphicsRectItem \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qgraphicsitem.h \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QGroupBox \
+		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qgroupbox.h
 
 release\gameui.obj: ..\FeedingFrenzy\gameui.cpp ..\FeedingFrenzy\gameui.h \
 		..\FeedingFrenzy\gamemodel.h \
@@ -878,6 +909,7 @@ release\gamemodel.obj: ..\FeedingFrenzy\gamemodel.cpp ..\FeedingFrenzy\gamemodel
 
 release\enemyfishcontroller.obj: ..\FeedingFrenzy\enemyfishcontroller.cpp ..\FeedingFrenzy\enemyfishcontroller.h \
 		..\FeedingFrenzy\constants.h \
+		..\FeedingFrenzy\gamemodel.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QLabel \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qlabel.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qtwidgetsglobal.h \
@@ -989,6 +1021,7 @@ release\enemyfishcontroller.obj: ..\FeedingFrenzy\enemyfishcontroller.cpp ..\Fee
 release\enemyfactory.obj: ..\FeedingFrenzy\enemyfactory.cpp ..\FeedingFrenzy\enemyfactory.h \
 		..\FeedingFrenzy\constants.h \
 		..\FeedingFrenzy\enemyfishcontroller.h \
+		..\FeedingFrenzy\gamemodel.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\QLabel \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qlabel.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qtwidgetsglobal.h \
@@ -1210,6 +1243,7 @@ release\screencontroller.obj: ..\FeedingFrenzy\screencontroller.cpp ..\FeedingFr
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qgraphicsscene.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\qpen.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtGui\QKeyEvent \
+		ui_screencontroller.h \
 		..\FeedingFrenzy\gamecontroller.h \
 		..\FeedingFrenzy\player.h \
 		..\FeedingFrenzy\constants.h \
@@ -1217,9 +1251,8 @@ release\screencontroller.obj: ..\FeedingFrenzy\screencontroller.cpp ..\FeedingFr
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qlabel.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtWidgets\qframe.h \
 		..\FeedingFrenzy\enemyfishcontroller.h \
-		..\FeedingFrenzy\gameui.h \
 		..\FeedingFrenzy\gamemodel.h \
-		ui_screencontroller.h \
+		..\FeedingFrenzy\gameui.h \
 		..\FeedingFrenzy\enemyfactory.h \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\QRandomGenerator \
 		E:\Programs\Qt\5.12.0\msvc2017\include\QtCore\qrandom.h \

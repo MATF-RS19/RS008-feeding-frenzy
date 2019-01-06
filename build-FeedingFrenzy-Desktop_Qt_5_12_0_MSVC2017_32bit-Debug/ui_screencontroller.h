@@ -125,7 +125,7 @@ public:
         testLabel->setFont(font2);
         gameOverGroup = new QGroupBox(centralwidget);
         gameOverGroup->setObjectName(QString::fromUtf8("gameOverGroup"));
-        gameOverGroup->setGeometry(QRect(360, 360, 120, 80));
+        gameOverGroup->setGeometry(QRect(0, 0, 800, 450));
         screencontroller->setCentralWidget(centralwidget);
         background->raise();
         howToPlayGroup->raise();
@@ -159,7 +159,7 @@ public:
         mainScreenGroup->setTitle(QString());
         mainScreenUIGroup->setTitle(QString());
         testLabel->setText(QApplication::translate("screencontroller", "TextLabel", nullptr));
-        gameOverGroup->setTitle(QApplication::translate("screencontroller", "GroupBox", nullptr));
+        gameOverGroup->setTitle(QString());
     } // retranslateUi
 
 };

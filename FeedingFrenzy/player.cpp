@@ -6,29 +6,31 @@
 Player::Player(QLabel* image, int size, int speed) : image(image), size(size), speed(speed)
 {
     Player::pix = QPixmap(":/images/player.png");
-    image->setPixmap(pix.scaled(size, size, Qt::KeepAspectRatio));
+
+    image->setGeometry(0, 0, sizeMultiplier() * pix.width(), sizeMultiplier() * pix.height());
+    image->setPixmap(pix.scaled(sizeMultiplier() * pix.width(), sizeMultiplier() * pix.height(), Qt::KeepAspectRatio));
     image->move(GameWindowWidth/2, GameWindowHeight/2);
 };
 
 void Player::movePlayer()
 {
-    QPointF currentPos = Player::image->pos();
-    QPointF targetPos = InputManager::GetInstance()->GetMousePos() - QPointF(size/2, size/2);
+    QPointF currentPos = image->pos();
+    QPointF targetPos = InputManager::GetInstance()->GetMousePos() - QPointF(width()/2, height()/2);
 
-    if(QVector2D(targetPos - currentPos).length() < GameDeltaTime * Player::speed){
-        Player::image->move(targetPos.x(), targetPos.y());
+    if(QVector2D(targetPos - currentPos).length() < GameDeltaTime * speed){
+        image->move(targetPos.x(), targetPos.y());
     }
     else{
-        QVector2D deltaPos = QVector2D(targetPos - currentPos).normalized() * Player::speed * GameDeltaTime;
+        QVector2D deltaPos = QVector2D(targetPos - currentPos).normalized() * speed * GameDeltaTime;
         QPointF finalPos = currentPos + deltaPos.toPointF();
-        Player::image->move(finalPos.x(), finalPos.y());
+        image->move(finalPos.x(), finalPos.y());
     }
 
     if(targetPos.x() < currentPos.x()){
-        Player::image->setPixmap(pix.transformed(QTransform().scale(-1 * (float)size / pix.width(), 1 * (float)size / pix.height())));
+        image->setPixmap(pix.transformed(QTransform().scale(-sizeMultiplier(), sizeMultiplier())));
     }
     else if (targetPos.x() > currentPos.x()){
-        Player::image->setPixmap(pix.transformed(QTransform().scale(1 * (float)size / pix.width(), 1 * (float)size / pix.height())));
+        image->setPixmap(pix.transformed(QTransform().scale(sizeMultiplier(), sizeMultiplier())));
     }
     else{
         // Fish orientation will stay as last frame
@@ -37,20 +39,39 @@ void Player::movePlayer()
 
 int Player::x()
 {
-    return Player::image->x();
+    return image->x() + size/2;
 }
 
 int Player::y()
 {
-    return Player::image->y();
+    return image->y() + size/2;
 }
 
 int Player::getSize()
 {
-    return Player::size;
+    return size;
 }
 
-void Player::TickUpdate()
+int Player::getColliderSize()
 {
-    Player::movePlayer();
+    return height();
+}
+
+float Player::sizeMultiplier(){
+    return (float)size / pix.width();
+}
+
+int Player::width(){
+    return (int)(sizeMultiplier() * pix.width());
+}
+
+int Player::height(){
+    return (int)(sizeMultiplier() * pix.height());
+}
+
+void Player::TickUpdate(int playerSize)
+{
+    size = playerSize;
+    movePlayer();
+    image->setGeometry(image->x(), image->y(), sizeMultiplier() * pix.width(), sizeMultiplier() * pix.height());
 };

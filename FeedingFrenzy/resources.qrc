@@ -4,5 +4,9 @@
         <file>player.png</file>
         <file>Sea_shell_blue.png</file>
         <file>how_to_play.png</file>
+        <file>fish0.png</file>
+        <file>fish1.png</file>
+        <file>fish2.png</file>
+        <file>fish3.png</file>
     </qresource>
 </RCC>

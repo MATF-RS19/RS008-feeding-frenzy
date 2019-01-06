@@ -7,12 +7,16 @@
 class Player {
 public:
     Player(QLabel* image, int size, int speed);
-    void TickUpdate();
+    void TickUpdate(int playerSize);
     int x();
     int y();
     int getSize();
+    int getColliderSize();
 private:
     void movePlayer();
+    float sizeMultiplier();
+    int width();
+    int height();
     QPixmap pix;
     QLabel* image;
     int size;

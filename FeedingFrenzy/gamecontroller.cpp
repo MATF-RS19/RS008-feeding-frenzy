@@ -15,7 +15,7 @@ GameController* GameController::GetInstance(){
 
 void GameController::TickUpdate(){
     if(GameController::isMainGameActive){
-        GameController::player->TickUpdate();
+        GameController::player->TickUpdate(gameModel->playerSize);
 
         GameController::enemyFactory->TickUpdate();
 
@@ -26,11 +26,16 @@ void GameController::TickUpdate(){
             int yDist = enemy->y() - player->y();
             float distance = sqrt(xDist*xDist + yDist*yDist);
 
-            if(distance < (player->getSize() + enemy->getSize()) / 2.0f){
+            if(distance < (player->getColliderSize() + enemy->getColliderSize()) / 2.0f){
                 if(player->getSize() >= enemy->getSize()){
                     // Eat enemy fish
                     GameController::enemyFactory->RemoveEnemyAtIndex(i);
                     i--;
+                    gameModel->OnFishEaten(enemy->getType());
+
+                    if(gameModel->fishConsumed >= gameModel->fishNeeded){
+                        GameController::homeScreenController.GoToGameOverScreen();
+                    }
                 }
                 else{
                     // Get eaten
@@ -39,7 +44,6 @@ void GameController::TickUpdate(){
             }
         }
 
-        GameController::gameModel->score ++;
         GameController::gameUi->UpdateUi(GameController::gameModel);
     }
 
@@ -61,7 +65,6 @@ void GameController::GoToMainScreen(Ui::screencontroller* ui){
 
 void GameController::SpawnPlayer(QGroupBox* parent){
     QLabel* playerWidget = new QLabel(parent);
-    playerWidget->setGeometry(0,0,GameController::gameModel->playerSize,GameController::gameModel->playerSize);
     playerWidget->show();
     GameController::player = new Player(playerWidget,
                                         GameController::gameModel->playerSize,
