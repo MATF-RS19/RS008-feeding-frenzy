@@ -36,6 +36,7 @@ public:
     QWidget *background;
     QGroupBox *mainScreenUIGroup;
     QLabel *testLabel;
+    QGroupBox *gameOverGroup;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -122,12 +123,16 @@ public:
         QFont font2;
         font2.setPointSize(15);
         testLabel->setFont(font2);
+        gameOverGroup = new QGroupBox(centralwidget);
+        gameOverGroup->setObjectName(QString::fromUtf8("gameOverGroup"));
+        gameOverGroup->setGeometry(QRect(360, 360, 120, 80));
         screencontroller->setCentralWidget(centralwidget);
         background->raise();
         howToPlayGroup->raise();
         homeScreenGroup->raise();
         mainScreenGroup->raise();
         mainScreenUIGroup->raise();
+        gameOverGroup->raise();
         menubar = new QMenuBar(screencontroller);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 788, 21));
@@ -154,6 +159,7 @@ public:
         mainScreenGroup->setTitle(QString());
         mainScreenUIGroup->setTitle(QString());
         testLabel->setText(QApplication::translate("screencontroller", "TextLabel", nullptr));
+        gameOverGroup->setTitle(QApplication::translate("screencontroller", "GroupBox", nullptr));
     } // retranslateUi
 
 };

@@ -22,7 +22,7 @@ public:
     void StartGame();
     void GoToMainScreen(Ui::screencontroller* groupBox);
 
-    screencontroller* GetMainWindow();
+    ScreenController* GetMainWindow();
 
     static GameController* GetInstance();
 private:
@@ -32,7 +32,7 @@ private:
 
     QGraphicsView* graphicsView;
 
-    screencontroller homeScreenController;
+    ScreenController homeScreenController;
     Player* player;
     bool isMainGameActive;
     GameUi* gameUi;

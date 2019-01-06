@@ -45,6 +45,11 @@ int Player::y()
     return Player::image->y();
 }
 
+int Player::getSize()
+{
+    return Player::size;
+}
+
 void Player::TickUpdate()
 {
     Player::movePlayer();

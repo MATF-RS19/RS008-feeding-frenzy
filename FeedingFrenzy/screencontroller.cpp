@@ -5,7 +5,7 @@
 #include <QPixmap>
 #include <iostream>
 
-screencontroller::screencontroller(QWidget *parent) :
+ScreenController::ScreenController(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::screencontroller)
 {
@@ -13,12 +13,12 @@ screencontroller::screencontroller(QWidget *parent) :
     Init();
 }
 
-screencontroller::~screencontroller()
+ScreenController::~ScreenController()
 {
     delete ui;
 }
 
-void screencontroller::Init()
+void ScreenController::Init()
 {
     setWindowTitle("Feeding Frenzy");
     this->setFixedSize(GameWindowWidth, GameWindowHeight);
@@ -26,28 +26,46 @@ void screencontroller::Init()
     ui->statusbar->hide();
     ui->menubar->hide();
 
-    ui->howToPlayGroup->hide();
-    ui->homeScreenGroup->show();
-    ui->mainScreenGroup->hide();
-    ui->mainScreenUIGroup->hide();
+    ScreenController::SwitchScreen(Home);
 }
 
-
-void screencontroller::on_howtoplay_clicked()
-{
-    ui->howToPlayGroup->show();
-    ui->homeScreenGroup->hide();
-    ui->mainScreenGroup->hide();
-    ui->mainScreenUIGroup->hide();
-
+void ScreenController::GoToGameOverScreen(){
+    ScreenController::SwitchScreen(GameOver);
 }
 
-void screencontroller::on_play_clicked()
+void ScreenController::on_howtoplay_clicked()
 {
-    ui->howToPlayGroup->hide();
-    ui->homeScreenGroup->hide();
-    ui->mainScreenGroup->show();
-    ui->mainScreenUIGroup->show();
+    ScreenController::SwitchScreen(HowToPlay);
+}
+
+void ScreenController::on_play_clicked()
+{
+    ScreenController::SwitchScreen(Main);
 
     GameController::GetInstance()->GoToMainScreen(ui);
+}
+
+void ScreenController::SwitchScreen(ScreenType screen)
+{
+    ui->howToPlayGroup->hide();
+    ui->homeScreenGroup->hide();
+    ui->mainScreenGroup->hide();
+    ui->mainScreenUIGroup->hide();
+    ui->gameOverGroup->hide();
+
+    switch(screen){
+    case Home:
+        ui->homeScreenGroup->show();
+        break;
+    case HowToPlay:
+        ui->howToPlayGroup->show();
+        break;
+    case Main:
+        ui->mainScreenGroup->show();
+        ui->mainScreenUIGroup->show();
+        break;
+    case GameOver:
+        ui->gameOverGroup->show();
+        break;
+    }
 }

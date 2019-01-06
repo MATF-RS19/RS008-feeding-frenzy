@@ -3,9 +3,7 @@
 
 GameController* GameController::instance = nullptr;
 
-GameController::GameController(){
-
-}
+GameController::GameController(){ }
 
 GameController* GameController::GetInstance(){
     if(instance == nullptr){
@@ -22,13 +20,22 @@ void GameController::TickUpdate(){
         GameController::enemyFactory->TickUpdate();
 
         for(int i = 0; i < GameController::enemyFactory->numberOfEnemies; i++){
-            int xDist = GameController::enemyFactory->enemies[i]->x() - GameController::player->x();
-            int yDist = GameController::enemyFactory->enemies[i]->y() - GameController::player->y();
+            auto enemy = GameController::enemyFactory->enemies[i];
+            auto player = GameController::player;
+            int xDist = enemy->x() - player->x();
+            int yDist = enemy->y() - player->y();
             float distance = sqrt(xDist*xDist + yDist*yDist);
 
-            if(distance < 37+25){
-                GameController::enemyFactory->RemoveEnemyAtIndex(i);
-                i--;
+            if(distance < (player->getSize() + enemy->getSize()) / 2.0f){
+                if(player->getSize() >= enemy->getSize()){
+                    // Eat enemy fish
+                    GameController::enemyFactory->RemoveEnemyAtIndex(i);
+                    i--;
+                }
+                else{
+                    // Get eaten
+                    GameController::homeScreenController.GoToGameOverScreen();
+                }
             }
         }
 
@@ -61,6 +68,6 @@ void GameController::SpawnPlayer(QGroupBox* parent){
                                         GameController::gameModel->playerSpeed);
 }
 
-screencontroller* GameController::GetMainWindow(){
+ScreenController* GameController::GetMainWindow(){
     return &homeScreenController;
 }

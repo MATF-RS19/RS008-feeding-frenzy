@@ -10,6 +10,7 @@ public:
     void TickUpdate();
     int x();
     int y();
+    int getSize();
 private:
     void movePlayer();
     QPixmap pix;

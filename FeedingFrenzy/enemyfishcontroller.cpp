@@ -42,6 +42,10 @@ int EnemyFishController::y()
     return EnemyFishController::image->y();
 }
 
+int EnemyFishController::getSize(){
+    return EnemyFishController::size;
+}
+
 void EnemyFishController::close()
 {
     EnemyFishController::image->close();

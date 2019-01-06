@@ -250,11 +250,25 @@
      </property>
     </widget>
    </widget>
+   <widget class="QGroupBox" name="gameOverGroup">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>360</y>
+      <width>120</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>GroupBox</string>
+    </property>
+   </widget>
    <zorder>background</zorder>
    <zorder>howToPlayGroup</zorder>
    <zorder>homeScreenGroup</zorder>
    <zorder>mainScreenGroup</zorder>
    <zorder>mainScreenUIGroup</zorder>
+   <zorder>gameOverGroup</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

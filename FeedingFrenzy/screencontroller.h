@@ -5,17 +5,26 @@
 #include <QGraphicsScene>
 #include <QKeyEvent>
 
+enum ScreenType{
+    Home,
+    Main,
+    HowToPlay,
+    GameOver
+};
+
 namespace Ui {
     class screencontroller;
 }
 
-class screencontroller : public QMainWindow
+class ScreenController : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit screencontroller(QWidget *parent = nullptr);
-    ~screencontroller();
+    explicit ScreenController(QWidget *parent = nullptr);
+    ~ScreenController();
+
+    void GoToGameOverScreen();
 
 private slots:
     void on_howtoplay_clicked();
@@ -24,6 +33,7 @@ private slots:
 private:
     Ui::screencontroller *ui;
     void Init();
+    void SwitchScreen(ScreenType screen);
 };
 
 #endif // HOMESCREENCONTROLLER_H
