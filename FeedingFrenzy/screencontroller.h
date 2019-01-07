@@ -31,6 +31,8 @@ private slots:
     void on_howtoplay_clicked();
     void on_play_clicked();
 
+    void on_esc_clicked();
+
 private:
     Ui::screencontroller *ui;
     void Init();

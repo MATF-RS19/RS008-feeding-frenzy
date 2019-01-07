@@ -75,3 +75,8 @@ void ScreenController::SwitchScreen(ScreenType screen)
         break;
     }
 }
+
+void ScreenController::on_esc_clicked()
+{
+    ScreenController::SwitchScreen(Home);
+}

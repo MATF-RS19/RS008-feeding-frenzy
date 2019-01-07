@@ -155,6 +155,47 @@
       <string notr="true">background-image: url(:/images/how_to_play.png);</string>
      </property>
     </widget>
+    <widget class="QLabel" name="escBg">
+     <property name="geometry">
+      <rect>
+       <x>138</x>
+       <y>53</y>
+       <width>71</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/images/Sea_shell_blue.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="esc">
+     <property name="geometry">
+      <rect>
+       <x>138</x>
+       <y>65</y>
+       <width>71</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>13</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:transparent;</string>
+     </property>
+     <property name="text">
+      <string>Esc</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="mainScreenGroup">
     <property name="geometry">
@@ -271,26 +312,25 @@
       <bool>false</bool>
      </property>
     </widget>
-   </widget>
-   <widget class="QGroupBox" name="gameOverGroup">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>800</width>
-      <height>450</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string/>
-    </property>
+    <widget class="QGroupBox" name="gameOverGroup">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>800</width>
+       <height>450</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <zorder>background</zorder>
    <zorder>howToPlayGroup</zorder>
    <zorder>homeScreenGroup</zorder>
    <zorder>mainScreenGroup</zorder>
    <zorder>mainScreenUIGroup</zorder>
-   <zorder>gameOverGroup</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -298,7 +338,7 @@
      <x>0</x>
      <y>0</y>
      <width>788</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
