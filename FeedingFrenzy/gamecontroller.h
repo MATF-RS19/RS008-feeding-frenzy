@@ -14,6 +14,7 @@
 #include <QDebug>
 #include <QGroupBox>
 #include <QLabel>
+#include <QMediaPlayer>
 
 class GameController{
 public:
@@ -29,6 +30,9 @@ private:
     GameController();
     static GameController* instance;
     void SpawnPlayer(QGroupBox* parent);
+    QMediaPlayer *music2;
+    QMediaPlayer *music1;
+    QMediaPlayer *bite;
 
     QGraphicsView* graphicsView;
 

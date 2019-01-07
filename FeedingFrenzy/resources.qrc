@@ -9,4 +9,10 @@
         <file>fish2.png</file>
         <file>fish3.png</file>
     </qresource>
+    <qresource prefix="/sounds">
+        <file>bite.wav</file>
+        <file>button.wav</file>
+        <file>mainTheme.mp3</file>
+        <file>menu.mp3</file>
+    </qresource>
 </RCC>

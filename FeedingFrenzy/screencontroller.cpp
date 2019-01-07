@@ -4,11 +4,15 @@
 #include "constants.h"
 #include <QPixmap>
 #include <iostream>
+#include <QMediaPlayer>
+
 
 ScreenController::ScreenController(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::screencontroller)
 {
+    button = new QMediaPlayer();
+    button->setMedia(QUrl("qrc:/sounds/button.wav"));//setting sound for click
     ui->setupUi(this);
     Init();
 }
@@ -36,11 +40,13 @@ void ScreenController::GoToGameOverScreen(bool hasWon){
 
 void ScreenController::on_howtoplay_clicked()
 {
+    button->play();
     ScreenController::SwitchScreen(HowToPlay);
 }
 
 void ScreenController::on_play_clicked()
 {
+    button->play();
     ScreenController::SwitchScreen(Main);
     GameController::GetInstance()->GoToMainScreen(ui);
 }

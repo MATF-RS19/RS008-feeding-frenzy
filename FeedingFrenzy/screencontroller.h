@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QKeyEvent>
+#include <QMediaPlayer>
 
 enum ScreenType{
     Home,
@@ -34,6 +35,7 @@ private:
     Ui::screencontroller *ui;
     void Init();
     void SwitchScreen(ScreenType screen);
+    QMediaPlayer *button;
 };
 
 #endif // HOMESCREENCONTROLLER_H

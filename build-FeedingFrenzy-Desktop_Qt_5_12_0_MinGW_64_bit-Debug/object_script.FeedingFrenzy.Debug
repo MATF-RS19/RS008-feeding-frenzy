@@ -1,0 +1,11 @@
+debug/main.o
+debug/gamecontroller.o
+debug/inputmanager.o
+debug/player.o
+debug/gameui.o
+debug/gamemodel.o
+debug/enemyfishcontroller.o
+debug/enemyfactory.o
+debug/screencontroller.o
+debug/qrc_resources.o
+debug/moc_screencontroller.o
