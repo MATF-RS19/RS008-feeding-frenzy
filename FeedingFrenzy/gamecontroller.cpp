@@ -3,13 +3,21 @@
 
 GameController* GameController::instance = nullptr;
 
-GameController::GameController(){ }
+GameController::GameController(){
+    music1 = new QMediaPlayer();
+    music2=new QMediaPlayer();
+    bite = new QMediaPlayer();
+    bite->setMedia(QUrl("qrc:/sounds/bite.wav"));
+    music1->setMedia(QUrl("qrc:/sounds/menu.mp3"));//sound for homescreen
+    music2->setMedia(QUrl("qrc:/sounds/mainTheme.mp3"));//sound for ongoing game
+}
 
 GameController* GameController::GetInstance(){
     if(instance == nullptr){
         instance = new GameController();
         instance->isMainGameActive = false;
     }
+
     return instance;
 }
 
@@ -27,10 +35,17 @@ void GameController::TickUpdate(){
             float distance = sqrt(xDist*xDist + yDist*yDist);
 
             if(distance < (player->getColliderSize() + enemy->getColliderSize()) / 2.0f){
-                if(player->getSize() >= enemy->getSize()){
+                if(player->getSize() >= enemy->getSize()){//player can eat fish that is currently smaller than him
                     // Eat enemy fish
-                    GameController::enemyFactory->RemoveEnemyAtIndex(i);
-                    i--;
+                    if(bite->state() == QMediaPlayer::PlayingState){//checking state of biting sound
+                    bite->setPosition(0);                            //so the sound begin for another bite even if
+                    }                                                  //wasn't over previous time
+                    else if(bite->state()==QMediaPlayer::StoppedState)
+                    {
+                        bite->play();
+                    }
+                    GameController::enemyFactory->RemoveEnemyAtIndex(i);//the enemy fish which we currently can eat
+                    i--;                                                //has been eaten,so it desapears
                     gameModel->OnFishEaten(enemy->getType());
 
                     if(gameModel->fishConsumed >= gameModel->fishNeeded){
@@ -39,6 +54,7 @@ void GameController::TickUpdate(){
                 }
                 else{
                     // Get eaten
+                    bite->play();
                     GameController::homeScreenController.GoToGameOverScreen(false);
                 }
             }
@@ -50,10 +66,13 @@ void GameController::TickUpdate(){
 }
 
 void GameController::StartGame(){
+    music1->play();
     GameController::homeScreenController.show();
 }
 
 void GameController::GoToMainScreen(Ui::screencontroller* ui){
+    music1->stop();
+    music2->play();
     GameController::isMainGameActive = true;
     GameController::gameUi = new GameUi(ui);
     GameController::gameModel = new GameModel();
