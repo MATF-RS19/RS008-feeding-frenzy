@@ -112,7 +112,7 @@
      <property name="font">
       <font>
        <family>MV Boli</family>
-       <pointsize>13</pointsize>
+       <pointsize>12</pointsize>
        <weight>75</weight>
        <italic>false</italic>
        <bold>true</bold>
@@ -193,7 +193,7 @@
       <string notr="true">background-color:transparent;</string>
      </property>
      <property name="text">
-      <string>Esc</string>
+      <string>Exit</string>
      </property>
     </widget>
    </widget>
@@ -312,17 +312,139 @@
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="QGroupBox" name="gameOverGroup">
+   </widget>
+   <widget class="QGroupBox" name="gameOverGroup">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>450</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="result">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>20</y>
-       <width>800</width>
-       <height>450</height>
+       <x>250</x>
+       <y>30</y>
+       <width>481</width>
+       <height>121</height>
       </rect>
      </property>
-     <property name="title">
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>21</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
       <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="yourscore">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>150</y>
+       <width>251</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>13</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="resetBg">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>270</y>
+       <width>91</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/images/Sea_shell_blue.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="quitBg">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>270</y>
+       <width>91</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/images/Sea_shell_blue.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="quit">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>290</y>
+       <width>71</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>13</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:transparent;</string>
+     </property>
+     <property name="text">
+      <string>Quit</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="reset">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>290</y>
+       <width>71</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>13</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:transparent;</string>
+     </property>
+     <property name="text">
+      <string>Reset</string>
      </property>
     </widget>
    </widget>
@@ -331,6 +453,7 @@
    <zorder>homeScreenGroup</zorder>
    <zorder>mainScreenGroup</zorder>
    <zorder>mainScreenUIGroup</zorder>
+   <zorder>gameOverGroup</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

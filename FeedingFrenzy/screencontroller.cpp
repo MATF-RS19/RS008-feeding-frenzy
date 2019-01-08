@@ -33,9 +33,17 @@ void ScreenController::Init()
     ScreenController::SwitchScreen(Home);
 }
 
-void ScreenController::GoToGameOverScreen(bool hasWon){
+void ScreenController::GoToGameOverScreen(bool hasWon, int score){
     ScreenController::SwitchScreen(GameOver);
     //Setup UI for game over
+
+
+    if(hasWon){
+        ui->result->setText("Congratulations, you won!");
+    } else {
+        ui->result->setText("Sorry, you lost.");
+    }
+    ui->yourscore->setText("Your score: " + QString::number(score));
 }
 
 void ScreenController::on_howtoplay_clicked()
@@ -78,5 +86,19 @@ void ScreenController::SwitchScreen(ScreenType screen)
 
 void ScreenController::on_esc_clicked()
 {
+    button->play();
     ScreenController::SwitchScreen(Home);
+}
+
+void ScreenController::on_reset_clicked()
+{
+    button->play();
+    ScreenController::SwitchScreen(Main);
+    GameController::GetInstance()->GoToMainScreen(ui);
+}
+
+void ScreenController::on_quit_clicked()
+{
+    button->play();
+    this->close();
 }

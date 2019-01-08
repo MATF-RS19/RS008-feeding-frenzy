@@ -49,13 +49,13 @@ void GameController::TickUpdate(){
                     gameModel->OnFishEaten(enemy->getType());
 
                     if(gameModel->fishConsumed >= gameModel->fishNeeded){
-                        GameController::homeScreenController.GoToGameOverScreen(true);
+                        GameController::homeScreenController.GoToGameOverScreen(true, gameModel->score);
                     }
                 }
                 else{
                     // Get eaten
                     bite->play();
-                    GameController::homeScreenController.GoToGameOverScreen(false);
+                    GameController::homeScreenController.GoToGameOverScreen(false, gameModel->score);
                 }
             }
         }
