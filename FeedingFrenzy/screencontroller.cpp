@@ -41,7 +41,7 @@ void ScreenController::GoToGameOverScreen(bool hasWon, int score){
     if(hasWon){
         ui->result->setText("Congratulations, you won!");
     } else {
-        ui->result->setText("Sorry, you lost.");
+        ui->result->setText("Sorry, you lost!");
     }
     ui->yourscore->setText("Your score: " + QString::number(score));
 }

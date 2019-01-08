@@ -1,6 +1,6 @@
 #include "gamecontroller.h"
 #include <math.h>
-
+#include<QTimer>
 GameController* GameController::instance = nullptr;
 
 GameController::GameController(){
@@ -66,12 +66,22 @@ void GameController::TickUpdate(){
 }
 
 void GameController::StartGame(){
+
+    QMediaPlaylist *playlist = new QMediaPlaylist();
+    playlist->setPlaybackMode(QMediaPlaylist::Loop);
+    music1->setPlaylist(playlist);
+    playlist->setCurrentIndex(0);
     music1->play();
+
     GameController::homeScreenController.show();
 }
 
 void GameController::GoToMainScreen(Ui::screencontroller* ui){
     music1->stop();
+    playlist->addMedia(QUrl("qrc:/sounds/menu.mp3"));
+    playlist->setPlaybackMode(QMediaPlaylist::Loop);
+    music2->setPlaylist(playlist);
+    playlist->setCurrentIndex(0);
     music2->play();
     GameController::isMainGameActive = true;
     GameController::gameUi = new GameUi(ui);

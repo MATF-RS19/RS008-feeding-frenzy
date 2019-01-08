@@ -15,7 +15,7 @@
 #include <QGroupBox>
 #include <QLabel>
 #include <QMediaPlayer>
-
+#include <QMediaPlaylist>
 class GameController{
 public:
     void Init();

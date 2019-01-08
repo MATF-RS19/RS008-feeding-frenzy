@@ -1,8 +1,8 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-const int GameWindowWidth = 800;
-const int GameWindowHeight = 450;
+const int GameWindowWidth = 1200;
+const int GameWindowHeight =680;
 const float GameDeltaTime = 0.033f; //16 milliseconds per frame -> game will run at 60 fps
 const int MarginWidthForEnemySpawning = 200; //Enemies will spawn 100 pixels away from screen edges
 

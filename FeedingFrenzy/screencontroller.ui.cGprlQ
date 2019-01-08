@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
-    <height>680</height>
+    <width>788</width>
+    <height>473</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -590,7 +590,7 @@ image: url(:/images/player.png);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1200</width>
+     <width>788</width>
      <height>26</height>
     </rect>
    </property>
