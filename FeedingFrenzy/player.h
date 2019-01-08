@@ -11,6 +11,7 @@ public:
     int x();
     int y();
     int getSize();
+    void close();
     int getColliderSize();
 private:
     void movePlayer();

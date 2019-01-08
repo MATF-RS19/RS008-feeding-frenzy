@@ -12,6 +12,7 @@ public:
     EnemyFactory(Ui::screencontroller* ui);
     void TickUpdate();
     void RemoveEnemyAtIndex(int i);
+    void Clear();
 
     EnemyFishController* enemies[100];
     int numberOfEnemies;

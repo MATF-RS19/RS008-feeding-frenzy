@@ -52,6 +52,11 @@ int Player::getSize()
     return size;
 }
 
+void Player::close(){
+    image->close();
+    image = nullptr;
+}
+
 int Player::getColliderSize()
 {
     return height();

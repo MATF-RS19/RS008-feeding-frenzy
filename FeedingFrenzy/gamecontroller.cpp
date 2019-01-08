@@ -55,6 +55,9 @@ void GameController::TickUpdate(){
                 else{
                     // Get eaten
                     bite->play();
+                    GameController::isMainGameActive = false;
+                    GameController::enemyFactory->Clear();
+                    GameController::player->close();
                     GameController::homeScreenController.GoToGameOverScreen(false, gameModel->score);
                 }
             }
@@ -78,6 +81,7 @@ void GameController::StartGame(){
 
 void GameController::GoToMainScreen(Ui::screencontroller* ui){
     music1->stop();
+    QMediaPlaylist *playlist = new QMediaPlaylist();
     playlist->addMedia(QUrl("qrc:/sounds/menu.mp3"));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
     music2->setPlaylist(playlist);

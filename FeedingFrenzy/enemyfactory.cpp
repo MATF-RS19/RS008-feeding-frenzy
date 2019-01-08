@@ -30,6 +30,13 @@ void EnemyFactory::RemoveEnemyAtIndex(int i)
     }
 }
 
+void EnemyFactory::Clear(){
+    for(int i = 0; i < numberOfEnemies; i++){
+        RemoveEnemyAtIndex(i);
+        i--;
+    }
+}
+
 void EnemyFactory::SpawnFish(){
     QLabel* enemyWidget = new QLabel(ui->mainScreenGroup);
     enemyWidget->show();
