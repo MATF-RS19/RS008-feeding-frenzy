@@ -7,6 +7,7 @@ GameModel::GameModel()
     GameModel::playerSize = SizeMilestones[0];
     GameModel::playerSpeed = PlayerSpeed;
 
+    GameModel::lives = 3;
     GameModel::score = 0;
     GameModel::fishConsumed = 0.0f;
     GameModel::fishNeeded = FishNeededToWin;

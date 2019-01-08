@@ -13,6 +13,7 @@ public:
     GameModel();
 
     int score;
+    int lives;
     float fishConsumed;
     float fishNeeded;
 
