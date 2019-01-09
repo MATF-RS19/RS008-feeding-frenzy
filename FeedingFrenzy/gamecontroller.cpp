@@ -49,6 +49,9 @@ void GameController::TickUpdate(){
                     gameModel->OnFishEaten(enemy->getType());
 
                     if(gameModel->fishConsumed >= gameModel->fishNeeded){
+                        GameController::isMainGameActive = false;
+                        GameController::enemyFactory->Clear();
+                        GameController::player->close();
                         GameController::homeScreenController.GoToGameOverScreen(true, gameModel->score);
                     }
                 }

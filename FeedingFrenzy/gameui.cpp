@@ -1,4 +1,4 @@
-
+#include "constants.h"
 #include "gameui.h"
 #include <QDebug>
 
@@ -14,8 +14,6 @@ void GameUi::UpdateUi(GameModel *model)
     GameUi::ui->live1->hide();
     GameUi::ui->live2->hide();
     GameUi::ui->live3->hide();
-
-
 
     if(model->lives == 1){
         GameUi::ui->live1->show();
@@ -33,7 +31,25 @@ void GameUi::UpdateUi(GameModel *model)
         GameUi::ui->live3->show();
     }
 
+    GameUi::ui->fish1->show();
+    GameUi::ui->fish2->show();
+    GameUi::ui->fish3->show();
+    GameUi::ui->fish4->show();
 
+    if(model->playerSize == SizeMilestones[0]){
+        GameUi::ui->fish2->hide();
+        GameUi::ui->fish3->hide();
+        GameUi::ui->fish4->hide();
+    }
+
+    if(model->playerSize == SizeMilestones[1]){
+        GameUi::ui->fish3->hide();
+        GameUi::ui->fish4->hide();
+    }
+
+    if(model->playerSize == SizeMilestones[2]){
+        GameUi::ui->fish4->hide();
+    }
 
     int percentageCompleted = (int)(100*(model->fishConsumed / (float)model->fishNeeded));
     qDebug() << percentageCompleted;

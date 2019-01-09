@@ -587,7 +587,7 @@ image: url(:/images/player.png);</string>
       <string>TextLabel</string>
      </property>
     </widget>
-    <widget class="QLabel" name="fish1_2">
+    <widget class="QLabel" name="fish2">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -620,7 +620,7 @@ image: url(:/images/player.png);</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="fish1_4">
+    <widget class="QLabel" name="fish4">
      <property name="geometry">
       <rect>
        <x>430</x>
@@ -637,7 +637,7 @@ image: url(:/images/player.png);</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="fish1_3">
+    <widget class="QLabel" name="fish3">
      <property name="geometry">
       <rect>
        <x>310</x>
