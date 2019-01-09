@@ -37,13 +37,10 @@ void ScreenController::GoToGameOverScreen(bool hasWon, int score){
     ScreenController::SwitchScreen(GameOver);
     //Setup UI for game over
 
-
     if(hasWon){
         ui->result->setText("Congratulations, you won!");
-        ui->result->move(390, 110);
     } else {
         ui->result->setText("Sorry, you lost!");
-        ui->result->move(430, 110);
     }
     ui->yourscore->setText("Your score: " + QString::number(score));
 }

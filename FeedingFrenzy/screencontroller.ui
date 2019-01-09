@@ -669,16 +669,16 @@ image: url(:/images/player.png);</string>
     <widget class="QLabel" name="result">
      <property name="geometry">
       <rect>
-       <x>390</x>
+       <x>200</x>
        <y>110</y>
-       <width>481</width>
+       <width>800</width>
        <height>111</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>MV Boli</family>
-       <pointsize>22</pointsize>
+       <pointsize>40</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -686,30 +686,36 @@ image: url(:/images/player.png);</string>
      <property name="text">
       <string/>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLabel" name="yourscore">
      <property name="geometry">
       <rect>
-       <x>490</x>
+       <x>200</x>
        <y>230</y>
-       <width>271</width>
+       <width>800</width>
        <height>91</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>MV Boli</family>
-       <pointsize>15</pointsize>
+       <pointsize>25</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLabel" name="resetBg">
      <property name="geometry">
       <rect>
-       <x>240</x>
+       <x>260</x>
        <y>330</y>
        <width>231</width>
        <height>121</height>
@@ -725,7 +731,7 @@ image: url(:/images/player.png);</string>
     <widget class="QLabel" name="quitBg">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>720</x>
        <y>330</y>
        <width>221</width>
        <height>121</height>
@@ -741,10 +747,10 @@ image: url(:/images/player.png);</string>
     <widget class="QPushButton" name="quit">
      <property name="geometry">
       <rect>
-       <x>760</x>
-       <y>370</y>
+       <x>795</x>
+       <y>375</y>
        <width>71</width>
-       <height>31</height>
+       <height>40</height>
       </rect>
      </property>
      <property name="font">
@@ -766,10 +772,10 @@ image: url(:/images/player.png);</string>
     <widget class="QPushButton" name="reset">
      <property name="geometry">
       <rect>
-       <x>300</x>
-       <y>370</y>
+       <x>325</x>
+       <y>375</y>
        <width>101</width>
-       <height>41</height>
+       <height>40</height>
       </rect>
      </property>
      <property name="font">
@@ -808,7 +814,7 @@ image: url(:/images/player.png);</string>
      <x>0</x>
      <y>0</y>
      <width>1200</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
