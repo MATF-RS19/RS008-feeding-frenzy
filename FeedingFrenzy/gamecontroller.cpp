@@ -76,6 +76,7 @@ void GameController::TickUpdate(){
 void GameController::StartGame(){
 
     QMediaPlaylist *playlist = new QMediaPlaylist();
+    playlist->addMedia(QUrl("qrc:/sounds/menu.mp3"));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
     music1->setPlaylist(playlist);
     playlist->setCurrentIndex(0);
@@ -87,7 +88,7 @@ void GameController::StartGame(){
 void GameController::GoToMainScreen(Ui::screencontroller* ui){
     music1->stop();
     QMediaPlaylist *playlist = new QMediaPlaylist();
-    playlist->addMedia(QUrl("qrc:/sounds/menu.mp3"));
+    playlist->addMedia(QUrl("qrc:/sounds/mainTheme.mp3"));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
     music2->setPlaylist(playlist);
     playlist->setCurrentIndex(0);

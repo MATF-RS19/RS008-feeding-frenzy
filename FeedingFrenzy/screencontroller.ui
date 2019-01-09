@@ -41,10 +41,10 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>420</x>
-       <y>210</y>
-       <width>201</width>
-       <height>131</height>
+       <x>610</x>
+       <y>230</y>
+       <width>251</width>
+       <height>171</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -60,10 +60,10 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>60</y>
-       <width>201</width>
-       <height>131</height>
+       <x>300</x>
+       <y>70</y>
+       <width>261</width>
+       <height>181</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -76,8 +76,8 @@
     <widget class="QPushButton" name="play">
      <property name="geometry">
       <rect>
-       <x>200</x>
-       <y>100</y>
+       <x>360</x>
+       <y>130</y>
        <width>131</width>
        <height>51</height>
       </rect>
@@ -103,19 +103,19 @@
     <widget class="QPushButton" name="howtoplay">
      <property name="geometry">
       <rect>
-       <x>440</x>
-       <y>250</y>
-       <width>151</width>
+       <x>640</x>
+       <y>280</y>
+       <width>191</width>
        <height>51</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>MV Boli</family>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
+       <pointsize>18</pointsize>
+       <weight>50</weight>
        <italic>false</italic>
-       <bold>true</bold>
+       <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
@@ -125,10 +125,56 @@
       <string>How to play</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="QuitButton">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>450</y>
+       <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>22</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:transparent;</string>
+     </property>
+     <property name="text">
+      <string>Quit</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="QuitLb">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>380</y>
+       <width>181</width>
+       <height>181</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/images/Sea_shell_blue.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
     <zorder>howToPlayBg</zorder>
     <zorder>playBg</zorder>
     <zorder>howtoplay</zorder>
     <zorder>play</zorder>
+    <zorder>QuitLb</zorder>
+    <zorder>QuitButton</zorder>
    </widget>
    <widget class="QGroupBox" name="howToPlayGroup">
     <property name="geometry">
@@ -145,8 +191,8 @@
     <widget class="QWidget" name="howToPlayPopup" native="true">
      <property name="geometry">
       <rect>
-       <x>100</x>
-       <y>45</y>
+       <x>300</x>
+       <y>140</y>
        <width>600</width>
        <height>360</height>
       </rect>
@@ -158,10 +204,10 @@
     <widget class="QLabel" name="escBg">
      <property name="geometry">
       <rect>
-       <x>138</x>
-       <y>53</y>
-       <width>71</width>
-       <height>61</height>
+       <x>360</x>
+       <y>380</y>
+       <width>131</width>
+       <height>101</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -171,12 +217,12 @@
       <string/>
      </property>
     </widget>
-    <widget class="QPushButton" name="esc">
+    <widget class="QPushButton" name="Back">
      <property name="geometry">
       <rect>
-       <x>138</x>
-       <y>65</y>
-       <width>71</width>
+       <x>380</x>
+       <y>410</y>
+       <width>91</width>
        <height>31</height>
       </rect>
      </property>
@@ -184,16 +230,16 @@
       <font>
        <family>MV Boli</family>
        <pointsize>13</pointsize>
-       <weight>75</weight>
+       <weight>50</weight>
        <italic>false</italic>
-       <bold>true</bold>
+       <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color:transparent;</string>
      </property>
      <property name="text">
-      <string>Exit</string>
+      <string>Go Back</string>
      </property>
     </widget>
    </widget>
@@ -235,93 +281,11 @@
     <property name="title">
      <string/>
     </property>
-    <widget class="QLabel" name="scoreLabel">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>33</y>
-       <width>300</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="palette">
-      <palette>
-       <active>
-        <colorrole role="WindowText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-       </active>
-       <inactive>
-        <colorrole role="WindowText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-       </inactive>
-       <disabled>
-        <colorrole role="WindowText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>120</red>
-           <green>120</green>
-           <blue>120</blue>
-          </color>
-         </brush>
-        </colorrole>
-       </disabled>
-      </palette>
-     </property>
-     <property name="font">
-      <font>
-       <family>MV Boli</family>
-       <pointsize>15</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-    </widget>
-    <widget class="QProgressBar" name="progressBar">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>40</y>
-       <width>250</width>
-       <height>26</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>3</pointsize>
-      </font>
-     </property>
-     <property name="value">
-      <number>65</number>
-     </property>
-     <property name="textVisible">
-      <bool>false</bool>
-     </property>
-     <property name="invertedAppearance">
-      <bool>false</bool>
-     </property>
-    </widget>
     <widget class="QLabel" name="lives">
      <property name="geometry">
       <rect>
-       <x>486</x>
-       <y>33</y>
+       <x>800</x>
+       <y>0</y>
        <width>91</width>
        <height>40</height>
       </rect>
@@ -375,28 +339,167 @@
       <string>Lives:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="live1">
+    <widget class="QLabel" name="Progress">
      <property name="geometry">
       <rect>
-       <x>560</x>
-       <y>33</y>
+       <x>0</x>
+       <y>60</y>
+       <width>121</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="palette">
+      <palette>
+       <active>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>120</red>
+           <green>120</green>
+           <blue>120</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>15</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Progress</string>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progressBar">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>70</y>
+       <width>441</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>3</pointsize>
+      </font>
+     </property>
+     <property name="value">
+      <number>65</number>
+     </property>
+     <property name="textVisible">
+      <bool>false</bool>
+     </property>
+     <property name="invertedAppearance">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="fish1">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>10</y>
        <width>51</width>
        <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-image: url(:/images/player.png);</string>
+      <string notr="true">image: url(:/images/fish0.png);</string>
      </property>
      <property name="text">
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="live2">
+    <widget class="QLabel" name="Meal">
      <property name="geometry">
       <rect>
-       <x>610</x>
-       <y>33</y>
+       <x>20</x>
+       <y>10</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="palette">
+      <palette>
+       <active>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>120</red>
+           <green>120</green>
+           <blue>120</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>15</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Meal:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="live1">
+     <property name="geometry">
+      <rect>
+       <x>900</x>
+       <y>0</y>
        <width>51</width>
        <height>41</height>
       </rect>
@@ -412,8 +515,8 @@ image: url(:/images/player.png);</string>
     <widget class="QLabel" name="live3">
      <property name="geometry">
       <rect>
-       <x>660</x>
-       <y>33</y>
+       <x>1020</x>
+       <y>0</y>
        <width>51</width>
        <height>41</height>
       </rect>
@@ -426,17 +529,125 @@ image: url(:/images/player.png);</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="fish1">
+    <widget class="QLabel" name="scoreLabel">
      <property name="geometry">
       <rect>
-       <x>100</x>
-       <y>4</y>
+       <x>780</x>
+       <y>40</y>
+       <width>300</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="palette">
+      <palette>
+       <active>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>120</red>
+           <green>120</green>
+           <blue>120</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>15</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="fish1_2">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>10</y>
        <width>51</width>
        <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/images/fish0.png);</string>
+      <string notr="true">image: url(:/images/fish1.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="live2">
+     <property name="geometry">
+      <rect>
+       <x>960</x>
+       <y>0</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+image: url(:/images/player.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="fish1_4">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>10</y>
+       <width>121</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/images/fish3.png)
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="fish1_3">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>0</y>
+       <width>101</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/images/fish2.png)</string>
      </property>
      <property name="text">
       <string/>
@@ -579,11 +790,11 @@ image: url(:/images/player.png);</string>
     </widget>
    </widget>
    <zorder>background</zorder>
-   <zorder>howToPlayGroup</zorder>
-   <zorder>homeScreenGroup</zorder>
    <zorder>mainScreenGroup</zorder>
    <zorder>mainScreenUIGroup</zorder>
    <zorder>gameOverGroup</zorder>
+   <zorder>howToPlayGroup</zorder>
+   <zorder>homeScreenGroup</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
