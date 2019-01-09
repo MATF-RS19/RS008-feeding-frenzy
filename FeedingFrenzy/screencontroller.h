@@ -37,6 +37,8 @@ private slots:
 
     void on_quit_clicked();
 
+    void on_QuitButton_clicked();
+
 private:
     Ui::screencontroller *ui;
     void Init();

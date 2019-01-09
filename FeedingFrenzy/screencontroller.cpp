@@ -102,3 +102,9 @@ void ScreenController::on_quit_clicked()
     button->play();
     this->close();
 }
+
+void ScreenController::on_QuitButton_clicked()
+{
+    button->play();
+    this->close();
+}
