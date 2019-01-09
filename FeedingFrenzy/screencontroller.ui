@@ -659,8 +659,8 @@ image: url(:/images/player.png);</string>
      <rect>
       <x>0</x>
       <y>-1</y>
-      <width>1181</width>
-      <height>681</height>
+      <width>1200</width>
+      <height>680</height>
      </rect>
     </property>
     <property name="title">
@@ -669,16 +669,16 @@ image: url(:/images/player.png);</string>
     <widget class="QLabel" name="result">
      <property name="geometry">
       <rect>
-       <x>400</x>
+       <x>390</x>
        <y>110</y>
-       <width>451</width>
+       <width>481</width>
        <height>111</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>MV Boli</family>
-       <pointsize>21</pointsize>
+       <pointsize>22</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -690,7 +690,7 @@ image: url(:/images/player.png);</string>
     <widget class="QLabel" name="yourscore">
      <property name="geometry">
       <rect>
-       <x>450</x>
+       <x>490</x>
        <y>230</y>
        <width>271</width>
        <height>91</height>
@@ -699,7 +699,7 @@ image: url(:/images/player.png);</string>
      <property name="font">
       <font>
        <family>MV Boli</family>
-       <pointsize>13</pointsize>
+       <pointsize>15</pointsize>
       </font>
      </property>
      <property name="text">
@@ -750,7 +750,7 @@ image: url(:/images/player.png);</string>
      <property name="font">
       <font>
        <family>MV Boli</family>
-       <pointsize>13</pointsize>
+       <pointsize>17</pointsize>
        <weight>75</weight>
        <italic>false</italic>
        <bold>true</bold>
@@ -767,7 +767,7 @@ image: url(:/images/player.png);</string>
      <property name="geometry">
       <rect>
        <x>300</x>
-       <y>360</y>
+       <y>370</y>
        <width>101</width>
        <height>41</height>
       </rect>
@@ -775,7 +775,7 @@ image: url(:/images/player.png);</string>
      <property name="font">
       <font>
        <family>MV Boli</family>
-       <pointsize>13</pointsize>
+       <pointsize>17</pointsize>
        <weight>75</weight>
        <italic>false</italic>
        <bold>true</bold>
@@ -808,7 +808,7 @@ image: url(:/images/player.png);</string>
      <x>0</x>
      <y>0</y>
      <width>1200</width>
-     <height>26</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
