@@ -31,25 +31,38 @@ void GameUi::UpdateUi(GameModel *model)
         GameUi::ui->live3->show();
     }
 
-    GameUi::ui->fish1->show();
-    GameUi::ui->fish2->show();
-    GameUi::ui->fish3->show();
-    GameUi::ui->fish4->show();
+    GameUi::ui->fish1->hide();
+    GameUi::ui->fish2->hide();
+    GameUi::ui->fish3->hide();
+    GameUi::ui->fish4->hide();
 
     if(model->playerSize == SizeMilestones[0]){
-        GameUi::ui->fish2->hide();
-        GameUi::ui->fish3->hide();
-        GameUi::ui->fish4->hide();
+        //sound
+        GameUi::ui->fish1->show();
     }
 
     if(model->playerSize == SizeMilestones[1]){
-        GameUi::ui->fish3->hide();
-        GameUi::ui->fish4->hide();
+        //sound
+        GameUi::ui->fish1->show();
+        GameUi::ui->fish2->show();
     }
 
     if(model->playerSize == SizeMilestones[2]){
-        GameUi::ui->fish4->hide();
+        //sound
+        GameUi::ui->fish1->show();
+        GameUi::ui->fish2->show();
+        GameUi::ui->fish3->show();
     }
+
+
+    if(model->playerSize == SizeMilestones[3]){
+        //sound
+        GameUi::ui->fish1->show();
+        GameUi::ui->fish2->show();
+        GameUi::ui->fish3->show();
+        GameUi::ui->fish4->show();
+    }
+
 
     int percentageCompleted = (int)(100*(model->fishConsumed / (float)model->fishNeeded));
     qDebug() << percentageCompleted;
