@@ -10,6 +10,7 @@ public:
     void TickUpdate(int playerSize);
     int x();
     int y();
+    void setXY(int x,int y);
     int getSize();
     void close();
     int getColliderSize();

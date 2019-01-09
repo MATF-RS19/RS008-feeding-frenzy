@@ -47,6 +47,12 @@ int Player::y()
     return image->y() + size/2;
 }
 
+void Player::setXY(int x, int y)
+{
+    image->move(x, y);
+}
+
+
 int Player::getSize()
 {
     return size;

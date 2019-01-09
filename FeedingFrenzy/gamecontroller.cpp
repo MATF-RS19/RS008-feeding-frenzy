@@ -55,10 +55,15 @@ void GameController::TickUpdate(){
                 else{
                     // Get eaten
                     bite->play();
-                    GameController::isMainGameActive = false;
-                    GameController::enemyFactory->Clear();
-                    GameController::player->close();
-                    GameController::homeScreenController.GoToGameOverScreen(false, gameModel->score);
+                    gameModel->lives--;
+                    GameController::player->setXY(GameWindowWidth/2, 0);
+
+                    if(gameModel->lives == 0){
+                        GameController::isMainGameActive = false;
+                        GameController::enemyFactory->Clear();
+                        GameController::player->close();
+                        GameController::homeScreenController.GoToGameOverScreen(false, gameModel->score);
+                    }
                 }
             }
         }
