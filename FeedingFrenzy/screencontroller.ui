@@ -669,9 +669,9 @@ image: url(:/images/player.png);</string>
     <widget class="QLabel" name="result">
      <property name="geometry">
       <rect>
-       <x>200</x>
+       <x>149</x>
        <y>110</y>
-       <width>800</width>
+       <width>881</width>
        <height>111</height>
       </rect>
      </property>
@@ -814,7 +814,7 @@ image: url(:/images/player.png);</string>
      <x>0</x>
      <y>0</y>
      <width>1200</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

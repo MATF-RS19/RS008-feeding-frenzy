@@ -40,39 +40,28 @@ void GameUi::UpdateUi(GameModel *model)
     GameUi::ui->fish3->hide();
     GameUi::ui->fish4->hide();
 
-    if(model->playerSize == SizeMilestones[0]){//you can only eat yellow fish,she appears on the proggres bar
+    if(model->playerSize == SizeMilestones[0]){
         //sound
         GameUi::ui->fish1->show();
     }
 
-    if(model->playerSize == SizeMilestones[1]){//now you can eat red fish too
+    if(model->playerSize == SizeMilestones[1]){
         //sound
-        if(sign1==0){
-            upgrade_sound->play();
-            sign1++;
-        }
         GameUi::ui->fish1->show();
         GameUi::ui->fish2->show();
     }
 
-    if(model->playerSize == SizeMilestones[2]){//now you can eat green fish too
+    if(model->playerSize == SizeMilestones[2]){
         //sound
-        if(sign2==0){
-            upgrade_sound->play();
-            sign2++;
-        }
+        
         GameUi::ui->fish1->show();
         GameUi::ui->fish2->show();
         GameUi::ui->fish3->show();
     }
 
 
-    if(model->playerSize == SizeMilestones[3]){//now you can eat every fish there is
+    if(model->playerSize == SizeMilestones[3]){
         //sound
-        if(sign3==0){
-            upgrade_sound->play();
-            sign3++;
-        }
         GameUi::ui->fish1->show();
         GameUi::ui->fish2->show();
         GameUi::ui->fish3->show();

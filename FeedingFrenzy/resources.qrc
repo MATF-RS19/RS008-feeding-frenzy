@@ -14,5 +14,6 @@
         <file>button.wav</file>
         <file>mainTheme.mp3</file>
         <file>menu.mp3</file>
+        <file>upgrade.wav</file>
     </qresource>
 </RCC>
