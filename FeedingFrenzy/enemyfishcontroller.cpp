@@ -6,13 +6,13 @@ EnemyFishController::EnemyFishController(QLabel* image, int size, int speed, QPo
     image(image), size(size), speed(speed), startPos(startPos), targetPos(targetPosition), hasArrivedAtTargetPosition(false)
 {
     //Set fish type according to size
-    if(size < SizeMilestones[0]){
+    if(size == SizeMilestones[0]){
         type = SmallestYellow;
     }
-    else if(size < SizeMilestones[1]){
+    else if(size == SizeMilestones[1]){
         type = SmallOrange;
     }
-    else if(size < SizeMilestones[2]){
+    else if(size == SizeMilestones[2]){
         type = BigGreen;
     }
     else{

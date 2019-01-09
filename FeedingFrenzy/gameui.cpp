@@ -65,6 +65,5 @@ void GameUi::UpdateUi(GameModel *model)
 
 
     int percentageCompleted = (int)(100*(model->fishConsumed / (float)model->fishNeeded));
-    qDebug() << percentageCompleted;
     GameUi::ui->progressBar->setValue(percentageCompleted);
 }
