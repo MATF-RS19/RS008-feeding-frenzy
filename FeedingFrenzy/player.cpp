@@ -6,9 +6,10 @@
 Player::Player(QLabel* image, int size, int speed) : image(image), size(size), speed(speed)
 {
     Player::pix = QPixmap(":/images/player.png");
-
+    //scale player image to wanted size
     image->setGeometry(0, 0, sizeMultiplier() * pix.width(), sizeMultiplier() * pix.height());
     image->setPixmap(pix.scaled(sizeMultiplier() * pix.width(), sizeMultiplier() * pix.height(), Qt::KeepAspectRatio));
+    //set start position to center
     image->move(GameWindowWidth/2, GameWindowHeight/2);
 };
 
@@ -65,10 +66,11 @@ void Player::close(){
 
 int Player::getColliderSize()
 {
-    return height();
+    return height();//height is smaller than width-circle for detecting colision
 }
 
 float Player::sizeMultiplier(){
+    //ratio of real image and wanted size in game
     return (float)size / pix.width();
 }
 

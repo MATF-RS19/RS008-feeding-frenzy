@@ -52,7 +52,7 @@ void EnemyFactory::SpawnFish(){
     QPointF startPoint = QPointF(shouldStartFromLeft ? leftEdge : rightEdge, startY);
     QPointF endPoint = QPointF(!shouldStartFromLeft ? leftEdge : rightEdge, targetY);
 
-    int enemySize = SizeMilestones[QRandomGenerator::global()->bounded(4)];
+    int enemySize = FishSizes[QRandomGenerator::global()->bounded(4)];
     int enemySpeed = 100 + QRandomGenerator::global()->bounded(150);
     EnemyFactory::enemies[EnemyFactory::numberOfEnemies] =
             new EnemyFishController(enemyWidget, enemySize, enemySpeed, startPoint, endPoint);

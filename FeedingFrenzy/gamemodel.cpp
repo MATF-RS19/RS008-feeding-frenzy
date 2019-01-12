@@ -4,7 +4,7 @@
 
 GameModel::GameModel()
 {
-    GameModel::playerSize = SizeMilestones[0];
+    GameModel::playerSize = FishSizes[0];
     GameModel::playerSpeed = PlayerSpeed;
 
     GameModel::lives = 3;
@@ -19,17 +19,17 @@ void GameModel::OnFishEaten(FishType type)
     score += fishValue * 10;
     fishConsumed += fishValue / 2.0f;
 
-    if(fishConsumed < FistEatenToIncreaseSize[0]){
-        playerSize = SizeMilestones[0];
+    if(fishConsumed < FishEatenToIncreaseSize[0]){
+        playerSize = FishSizes[0];
     }
-    else if(fishConsumed < FistEatenToIncreaseSize[1]){
-        playerSize = SizeMilestones[1];
+    else if(fishConsumed < FishEatenToIncreaseSize[1]){
+        playerSize = FishSizes[1];
     }
-    else if(fishConsumed < FistEatenToIncreaseSize[2]){
-        playerSize = SizeMilestones[2];
+    else if(fishConsumed < FishEatenToIncreaseSize[2]){
+        playerSize = FishSizes[2];
     }
     else {
-        playerSize = SizeMilestones[3];
+        playerSize = FishSizes[3];
     }
 
 }

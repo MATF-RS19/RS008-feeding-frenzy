@@ -21,7 +21,7 @@ public:
     void Init();
     void TickUpdate();
     void StartGame();
-    void GoToMainScreen(Ui::screencontroller* groupBox);
+    void InitializeMainScreen(Ui::screencontroller* groupBox);
 
     ScreenController* GetMainWindow();
 
@@ -32,7 +32,7 @@ private:
     void SpawnPlayer(QGroupBox* parent);
     QMediaPlayer *music2;
     QMediaPlayer *music1;
-    QMediaPlayer *bite;
+    QMediaPlayer *biteSound;
 
     QGraphicsView* graphicsView;
 

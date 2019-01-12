@@ -11,8 +11,6 @@ ScreenController::ScreenController(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::screencontroller)
 {
-    button = new QMediaPlayer();
-    button->setMedia(QUrl("qrc:/sounds/button.wav"));//setting sound for click
     ui->setupUi(this);
     Init();
 }
@@ -25,18 +23,21 @@ ScreenController::~ScreenController()
 void ScreenController::Init()
 {
     setWindowTitle("Feeding Frenzy");
-    this->setFixedSize(GameWindowWidth, GameWindowHeight);
+    this->setFixedSize(GameWindowWidth, GameWindowHeight); //screen size is fixed
 
     ui->statusbar->hide();
     ui->menubar->hide();
+
+    button = new QMediaPlayer();//initializing sound for button click
+    button->setMedia(QUrl("qrc:/sounds/button.wav"));
 
     ScreenController::SwitchScreen(Home);
 }
 
 void ScreenController::GoToGameOverScreen(bool hasWon, int score){
     ScreenController::SwitchScreen(GameOver);
-    //Setup UI for game over
 
+    //Setup UI for game over
     if(hasWon){
         ui->result->setText("Congratulations, you won!");
     } else {
@@ -55,11 +56,12 @@ void ScreenController::on_play_clicked()
 {
     button->play();
     ScreenController::SwitchScreen(Main);
-    GameController::GetInstance()->GoToMainScreen(ui);
+    GameController::GetInstance()->InitializeMainScreen(ui);
 }
 
 void ScreenController::SwitchScreen(ScreenType screen)
 {
+    //at first everything is hidden and then deppending on 'screen' certain  group is shown
     ui->howToPlayGroup->hide();
     ui->homeScreenGroup->hide();
     ui->mainScreenGroup->hide();
@@ -93,7 +95,7 @@ void ScreenController::on_reset_clicked()
 {
     button->play();
     ScreenController::SwitchScreen(Main);
-    GameController::GetInstance()->GoToMainScreen(ui);
+    GameController::GetInstance()->InitializeMainScreen(ui);
 }
 
 void ScreenController::on_quit_clicked()

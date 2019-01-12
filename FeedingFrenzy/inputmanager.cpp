@@ -25,21 +25,16 @@ static int clamp(int number, int min, int max){
 }
 
 void InputManager::TickUpdate(QRect mainScreenRect){
+    //get cursor position
     QPoint globalCursorPos = QCursor::pos();
-    int mouseScreen = qApp->desktop()->screenNumber(globalCursorPos);
 
-    QRect mouseScreenGeometry = qApp->desktop()->screen(mouseScreen)->geometry();
-    QPoint localCursorPos = globalCursorPos - mouseScreenGeometry.topLeft();
-
-    auto cursorXPos = localCursorPos.x() - mainScreenRect.x();
-    auto cursorYPos = localCursorPos.y() - mainScreenRect.y();
+    auto cursorXPos = globalCursorPos.x() - mainScreenRect.x();
+    auto cursorYPos = globalCursorPos.y() - mainScreenRect.y();
 
     InputManager::mousePos = QPoint(
-                clamp(cursorXPos, 0, GameWindowWidth),
+                clamp(cursorXPos, 0, GameWindowWidth), //cursor position is limited to the game window
                 clamp(cursorYPos, 0, GameWindowHeight)
                 );
-
-    //qDebug() << InputManager::mousePos.x() << " " << InputManager::mousePos.y();
 }
 
 QPoint InputManager::GetMousePos(){

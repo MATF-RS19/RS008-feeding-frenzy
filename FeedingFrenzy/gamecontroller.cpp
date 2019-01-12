@@ -6,10 +6,8 @@ GameController* GameController::instance = nullptr;
 GameController::GameController(){
     music1 = new QMediaPlayer();
     music2=new QMediaPlayer();
-    bite = new QMediaPlayer();
-    bite->setMedia(QUrl("qrc:/sounds/bite.wav"));
-    music1->setMedia(QUrl("qrc:/sounds/menu.mp3"));//sound for homescreen
-    music2->setMedia(QUrl("qrc:/sounds/mainTheme.mp3"));//sound for ongoing game
+    biteSound = new QMediaPlayer();
+    biteSound->setMedia(QUrl("qrc:/sounds/bite.wav"));
 }
 
 GameController* GameController::GetInstance(){
@@ -37,12 +35,12 @@ void GameController::TickUpdate(){
             if(distance < (player->getColliderSize() + enemy->getColliderSize()) / 2.0f){
                 if(player->getSize() >= enemy->getSize()){//player can eat fish that is currently smaller than him
                     // Eat enemy fish
-                    if(bite->state() == QMediaPlayer::PlayingState){//checking state of biting sound
-                    bite->setPosition(0);                            //so the sound begin for another bite even if
+                    if(biteSound->state() == QMediaPlayer::PlayingState){//checking state of biting sound
+                        biteSound->setPosition(0);                            //so the sound begin for another bite even if
                     }                                                  //wasn't over previous time
-                    else if(bite->state()==QMediaPlayer::StoppedState)
+                    else if(biteSound->state()==QMediaPlayer::StoppedState)
                     {
-                        bite->play();
+                        biteSound->play();
                     }
                     GameController::enemyFactory->RemoveEnemyAtIndex(i);//the enemy fish which we currently can eat
                     i--;                                                //has been eaten,so it desapears
@@ -57,7 +55,7 @@ void GameController::TickUpdate(){
                 }
                 else{
                     // Get eaten
-                    bite->play();
+                    biteSound->play();
                     gameModel->lives--;
                     GameController::player->setXY(GameWindowWidth/2, 0);
 
@@ -77,7 +75,7 @@ void GameController::TickUpdate(){
 }
 
 void GameController::StartGame(){
-
+    //enabled sound for homescreen
     QMediaPlaylist *playlist = new QMediaPlaylist();
     playlist->addMedia(QUrl("qrc:/sounds/menu.mp3"));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
@@ -88,14 +86,16 @@ void GameController::StartGame(){
     GameController::homeScreenController.show();
 }
 
-void GameController::GoToMainScreen(Ui::screencontroller* ui){
+void GameController::InitializeMainScreen(Ui::screencontroller* ui){
     music1->stop();
+    //enabled sound for homescreen
     QMediaPlaylist *playlist = new QMediaPlaylist();
     playlist->addMedia(QUrl("qrc:/sounds/mainTheme.mp3"));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
     music2->setPlaylist(playlist);
     playlist->setCurrentIndex(0);
     music2->play();
+
     GameController::isMainGameActive = true;
     GameController::gameUi = new GameUi(ui);
     GameController::gameModel = new GameModel();
