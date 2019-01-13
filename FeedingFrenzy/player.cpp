@@ -18,6 +18,7 @@ void Player::movePlayer()
     QPointF currentPos = image->pos();
     QPointF targetPos = InputManager::GetInstance()->GetMousePos() - QPointF(width()/2, height()/2);
 
+    // If fish is very close to the target, move it instantly
     if(QVector2D(targetPos - currentPos).length() < GameDeltaTime * speed){
         image->move(targetPos.x(), targetPos.y());
     }
@@ -27,6 +28,7 @@ void Player::movePlayer()
         image->move(finalPos.x(), finalPos.y());
     }
 
+    // Flip the image according to the direction
     if(targetPos.x() < currentPos.x()){
         image->setPixmap(pix.transformed(QTransform().scale(-sizeMultiplier(), sizeMultiplier())));
     }

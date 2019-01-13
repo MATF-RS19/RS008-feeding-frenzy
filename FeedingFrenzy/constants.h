@@ -12,5 +12,12 @@ const int PlayerSpeed = 600;//movement 600 pixels per second
 
 const float FishNeededToWin = 60.0f; //it takes 60kg of fish eaten to win
 const float FishEatenToIncreaseSize[] = {8.0f, 24.0f, 48.0f}; //When you eat 8kg of fish you increase in size, and again at 24...
-                                                                //these numbers are points when the player increases in size
+
+// Amount of seconds which need to pass between fish spawning
+const float MinimumDelayForFishToSpawn = 0.2f;
+const float MaximumDelayForFishToSpawn = 1.2f;
+
+const float MinimumEnemyFishSpeed = 100;
+const float MaximumEnemyFishSpeed = 250;
+
 #endif // CONSTANTS_H

@@ -10,7 +10,7 @@ void EnemyFactory::TickUpdate()
     secondsUntilNextRespawn -= GameDeltaTime;
 
     if(secondsUntilNextRespawn < 0){
-        secondsUntilNextRespawn = 0.2f + QRandomGenerator::global()->bounded(1.0f);
+        secondsUntilNextRespawn = MinimumDelayForFishToSpawn + QRandomGenerator::global()->bounded(MaximumDelayForFishToSpawn - MinimumDelayForFishToSpawn);
         SpawnFish();
     }
 
@@ -47,15 +47,15 @@ void EnemyFactory::SpawnFish(){
     int startY = QRandomGenerator::global()->bounded(GameWindowHeight);
     int targetY = QRandomGenerator::global()->bounded(GameWindowHeight);
 
+    // Decide randomly if fish should start from left or right
     bool shouldStartFromLeft = QRandomGenerator::global()->bounded(1.0f) < 0.5f;
 
     QPointF startPoint = QPointF(shouldStartFromLeft ? leftEdge : rightEdge, startY);
     QPointF endPoint = QPointF(!shouldStartFromLeft ? leftEdge : rightEdge, targetY);
 
     int enemySize = FishSizes[QRandomGenerator::global()->bounded(4)];
-    int enemySpeed = 100 + QRandomGenerator::global()->bounded(150);
-    EnemyFactory::enemies[EnemyFactory::numberOfEnemies] =
-            new EnemyFishController(enemyWidget, enemySize, enemySpeed, startPoint, endPoint);
+    int enemySpeed = MinimumEnemyFishSpeed + QRandomGenerator::global()->bounded(MaximumEnemyFishSpeed - MinimumEnemyFishSpeed);
+    EnemyFactory::enemies[EnemyFactory::numberOfEnemies] = new EnemyFishController(enemyWidget, enemySize, enemySpeed, startPoint, endPoint);
     EnemyFactory::numberOfEnemies++;
 }
 
